@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./fooi_ss.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <title>Fooi berekenen</title>
+    </head>
+
+    <body>
+        <header>Panneland</header>
+
+		<section>
+			<p>
+				't Is weer tijd om fooi te tellen! Woop woop!
+			</p>
+			
+			<br><br>
+			
+			<div>
+				<h1>Totale fooi: </h1>
+				<input     type="text"
+					         id="total-tips"
+					       name="totalTips"
+					       form="collega-form"
+					      value=""
+					  data-type="currency"
+					placeholder="€xxx,-"
+					    oninput="formatCurrency(this); colleagueList.setTotalTips(this.value);"/>
+			</div>
+			
+			<br><br>
+			
+			<hr>
+			<hr>
+			
+			<h1 style="margin-bottom: 0.5em">Lid toevoegen</h1>
+			<div>
+				<form id="collega-form" onsubmit="colleagueList.addColleague(this); return false;" action="#">
+					<div>
+						<input id="inp-name" name="name" style="width: 100%; padding: 0; border-width: 0; border-radius: 4px; height: 2.5em" required>
+					</div><br><h3 style="margin: 0;">
+						Gewerkte uren (.25 voor kwartier):
+					</h3><div>
+						<input     type="number"
+							       step=".25"
+									 id="hours"
+							      class="text-input"
+								   name="hours"
+								  value=""
+							placeholder="xx.xx uur"
+								oninput="formatTime(this);"/>
+					</div>
+					<input type="submit" value="Toevoegen" style="width: 100%; margin: 2em 0;"/>
+				</form>
+			</div>
+		</section>
+		
+		<section>
+			<br>
+			<hr>
+			<hr>
+			<h1 style="margin-bottom: 0.5em">Leden van de dag:</h1>
+		</section>
+		
+		<section id="colleagues"></section>
+			
+		<br><br>
+		
+		<section>
+			<button style="width: 100%;" onclick="colleagueList.clear();">Wissen</button>
+			
+			<br><br><br>
+			
+			<hr>
+			
+			<br>
+			
+			<p>
+				Met deze simpele tool kan je gemakkelijk zien hoe de verdeling van de fooi
+				is op basis van ieders gewerkte uren. De totale fooi wordt gedeeld door het
+				totale aantal uur en per collega vermenigvuldigd met het aantal uur dat zij
+				gewerkt hebben. Het eindbedrag wordt per persoon afgerond op €0,50. <br><br>
+				Om een collega uit de lijst van collega's te halen kan je tikken op de balk
+				waarin hun fooi, uren en naam staan. Als je dit doet, worden hun gegevens
+				terug in de invoervelden gezet. Zo kan je gemakkelijk kleine aanpassingen
+				maken.
+			</p>
+		</section>
+		
+		<br><br>
+		
+        <script src="./calcFooi.js"></script>
+		
+		<script>
+			colleagueList = new ColleagueList();
+		</script>
+    </body>
+</html>
