@@ -1,0 +1,94 @@
+/* Variables */
+:root {
+    --text-color: white;
+    --page-color: #380000;
+    --finebar-color: #220000;
+    --smol-code-color: rgba(50, 50, 50, 0.7);
+}
+
+
+/* Standard tags */
+body {
+    background-color: var(--page-color);
+    color: var(--text-color);
+    font-family: Alata;
+    margin: 0;
+}
+
+code {
+    border-radius: 5px;
+    background-color: var(--smol-code-color);
+    padding: 2px;
+	white-space: nowrap;
+}
+
+h2 {
+    margin: 0;
+}
+
+main {
+    width: 75%;
+    margin: auto;
+}
+
+p {
+    margin: 0;
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 1080px) {
+    main {
+        width: 50%;
+    }
+}
+
+
+/* Classes */
+.fine_bar {
+    width: 100%;
+    background-color: var(--finebar-color);
+    font-size: 30px;
+    text-align: center;
+}
+
+.fine_bar > a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+header.fine_bar {
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 30px;
+}
+
+footer.fine_bar {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer.fine_bar > ul {
+    list-style: none;
+}
+
+footer.fine_bar a {
+    color: var(--text-color);
+}
+
+footer.fine_bar > * {
+    padding: 0.3em 0;
+    margin: 0;
+}
+
+a.section-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a.section-link > h2 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-style: italic;
+}

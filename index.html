@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="./resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="./resources/CopyCode.js"></script>
+        <title>Welcome!</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Welcome to my F.I.N.E. project!</h1>
+
+            <section id="intro">
+                <p>
+                    How nice of you to join me here! I've currently only
+                    prepared material on programming in C. I hope it can help
+                    you when you get stuck. More material is supposed to be
+                    added <i>kinda</i> regularly. If you find the current
+                    material helpful, you may want to come back from time to
+                    time to see if I added new stuff. For now, this is all I
+                    have prepared for you. Hope it helps!
+                    <br><br>
+                    But first!
+                </p>
+            </section>
+
+            <section id="how-fine-works">
+                <a href="#how-fine-works" class="section-link">
+                    <h2>How does F.I.N.E. work?</h2>
+                </a>
+
+                <p>
+                    There are two main things to know to make the most of your
+                    use of this website. The first is that paragraph headers
+                    (such as "How does F.I.N.E. work?" above) are links to that
+                    paragraph. Not necessarily useful if you're already on the
+                    page, but possibly useful when you want to share a specific
+                    paragraph with someone. Just right-click the header and copy
+                    its link.
+                </p><br><p>
+                    The second (and by far the coolest!) thing to know is how to
+                    use the code cells on the instruction pages. Every page
+                    about C will have at least one code cell like this one:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+    printf("Hello, welcome to F.I.N.E.!\n");
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    These code cells always contain a full directly executable
+                    C program. Right-clicking on a cell copies this correct,
+                    immediately compilable script to your clipboard, which means
+                    you can paste it with <code>Ctrl + V</code> (if your code
+                    editor allows it  D:&lt; ). Left-clicking can now still be used
+                    to select part of the code in the cell itself. These visible
+                    parts in the cells are usually <i>not</i> full programs.
+                    <br>
+                    I personally really enjoy how easy these cells are to work
+                    with. If you keep an <a style="color: lightgoldenrodyellow" href="https://www.onlinegdb.com/" target="_blank">online C editor</a>
+                    on hand, you can go from reading to experimenting in no time
+                    flat. Give it a shot!
+                    <br><br>
+                    Now, on to the material.
+                </p>
+            </section>
+
+            <section id="basics">
+                <a href="#basics" class="section-link">
+                    <h2>Basics: explaining basic concepts in C individually</h2>
+                </a>
+
+                <p>
+                    The basics of C can easily be improperly explained or
+                    glossed over. I have dedicated pages to the basics of C on
+                    which I explain basic concepts, their syntax and what that
+                    syntax means. Any such page may rely on material covered on
+                    a previous page. I minimize this, but some examples are
+                    simply best explained through use of a previously covered
+                    topic.
+                </p>
+
+                <ul>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/main">The <code>main</code> function</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/printf">The <code>printf</code> function</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/scanf">The <code>scanf</code> function</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/if"><code>if</code>-statements and conditions</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/loops"><code>for</code>, <code>while</code> and <code>do/while</code>-loops</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/arrays">Arrays, <code>typedef</code> and an introduction to pointers</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/functions">Functions and recursion</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/basics/structs"><code>struct</code>s</a></li>
+                </ul>
+            </section>
+
+            <!-- <section id="chapters">
+                <a href="#chapters" class="section-link">
+                    <h2>Chapters: covering multiple concepts in context [WORK IN PROGRESS]</h2>
+                </a>
+
+                <p>
+                    Chapters illustrate multiple concepts at once and build upon
+                    knowledge from previous chapters to stay short. It is
+                    advised to work through these chapters chronologically.
+                </p>
+
+                <ul>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/ch01-introduction"><code>CH 01:</code> Introduction to C</a></li>
+                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/ch02-control_flow"><code>CH 02:</code> Control flow</a></li>
+                </ul>
+            </section> -->
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li>le_mattt@mtmas.nl</li>
+            </ul>
+        </footer>
+    </body>
+</html>
