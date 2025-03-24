@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../resources/CopyCode.js"></script>
+        <title>Control flow</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Deciding the course of fate with control flow (WORK IN PROGRESS)</h1>
+
+            <section id="intro">
+                <p>
+                    Alright! Knowing how to scan, store and print information is
+                    of course thrilling, but it's time to put even more power in
+                    your hands. It's time to take a look at control flow.
+                </p><br><p>
+                    I'll write a program from scratch, and I'll explain the new
+                    control flow concepts as I go. The goal today is to make a
+                    program that shows the information in a part of computer
+                    memory.
+                </p><br><p>
+                    We will reserve 5 integers worth of memory and ask the user
+                    what byte in memory will be the first of all the bytes we
+                    store. (This program does not truly store the integers at
+                    the given byte location in memory. We make it look like it
+                    does.) Luckily, we already know exactly how to do that:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+<s>    // First byte to store at</s>
+    int firstByte;
+
+<s>    // The (uninitialized) integers stored</s>
+    int i0, i1, i2, i3, i4;
+
+    printf("At what byte in memory will we start storing the integers? ");
+    scanf(" %d", &firstByte);
+
+<s>    // We use `%ld` here because `sizeof` returns a long int, not an int</s>
+    printf("Okido! We'll reserve %ld bytes, starting from byte %d\n", 5 * sizeof(int), firstByte);
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    This may be a little weird to read for now, but it does not
+                    contain any concepts you have not seen before. This program
+                    does exactly what it's designed to do, but it accepts
+                    negative inputs. As computers do not have negative byte
+                    addresses, we should not accept negative inputs. Let's
+                    make an error with an <code>if</code>-statement to fix that
+                    problem!
+                </p>
+            </section>
+
+            <section id="if-statements">
+                <a href="#if-statements" class="section-link">
+                    <h2>Simple decisions with <code>if</code>, <code>else if</code> and <code>else</code> statements</h2>
+                </a>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+<s>    // First byte to store at</s>
+    int firstByte;
+
+<s>    // The (uninitialized) integers stored</s>
+    int i0, i1, i2, i3, i4;
+
+    printf("At what byte in memory will we start storing the integers? ");
+    scanf(" %d", &firstByte);
+
+    </span>if (firstByte <= -1) {
+<span class="invis-code">    </span>    printf("ERROR: Byte addresses must be positive.\n");
+<span class="invis-code">    </span>} else if (firstByte == 0) {
+<span class="invis-code">    </span>    printf("Starting at the beginning. Little boring...\n");
+<span class="invis-code">    </span>} else {
+<span class="invis-code">    </span><s>    // We use `%ld` here because `sizeof` returns a long int, not an int</s>
+<span class="invis-code">    </span>    printf("Okido! We'll reserve %ld bytes, starting from byte %d\n", 5 * sizeof(int), firstByte);
+<span class="invis-code">    </span>}<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Problem solved! This <code>if</code>-statement checks if our
+                    <code>firstByte</code> variable is smaller than or equal to
+                    -1, and it throws an error if that condition holds true. We
+                    could also have stated this condition as
+                    <code>firstByte < 0</code> where we use a strict inequality.
+                    And <code>-1 >= firstByte</code> - or "-1 is greater than or
+                    equal to <code>firstByte</code>" - would have worked too.
+                </p><br><p>
+                    If the condition in the parentheses of the
+                    <code>if</code>-statement is <i>not</i> met, a next check is
+                    performed. This check is the check for equality between 0
+                    and <code>firstByte</code>. Note that for evaluating
+                    equality we use two equals-signs, not one. This is so that
+                    we can distinguish between assigning to a variable and
+                    checking equality. To check for inequality, we use
+                    <code>!=</code> in place of <code>==</code>.
+                </p><br><p>
+                    There can be as many <code>else if</code>s after the
+                    <code>if</code> as you may want. These will all be evaluated
+                    in the order they are defined. The first condition that is
+                    met, has its code executed. After the condition for an
+                    <code>if</code> or <code>else if</code> is met, the
+                    conditions after that are not tested and their code will not
+                    be executed. In this case, just the <code>if</code> and a
+                    single <code>else if</code> suffice, so that's all we use.
+                </p><br><p>
+                    If none of the <code>if</code> and <code>else if</code>
+                    conditions are met, we execute the code in the
+                    <code>else</code>-block. An <code>if</code>-statement does
+                    not need to have an <code>else</code>-block, nor does it
+                    need to have <code>else if</code> statements. Having just
+                    the <code>if</code> is sufficient.
+                </p><br><p>
+                    Now, let's not shut down the program when we get a bad input.
+                    Let's instead ask for another value by wrapping the asking
+                    for a value in a loop.
+                </p>
+            </section>
+
+            <section id="while-loops">
+                <a href="#while-loop" class="section-link">
+                    <h2>Arbitrary looping with <code>do/while</code> and <code>while</code> loops</h2>
+                </a>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+<s>    // First byte to store at</s>
+    int firstByte;
+
+<s>    // The (uninitialized) integers stored</s>
+    int i0, i1, i2, i3, i4;
+
+    </span>do {
+<span class="invis-code">    </span>    printf("At what byte in memory will we start storing the integers? ");
+<span class="invis-code">    </span>    scanf(" %d", &firstByte);
+
+<span class="invis-code">    </span>    if (firstByte <= -1) {
+<span class="invis-code">    </span>        printf("ERROR: Byte addresses must be positive.\n");
+<span class="invis-code">    </span>        continue;
+<span class="invis-code">    </span>    } else if (firstByte == 0) {
+<span class="invis-code">    </span>        printf("Starting at the beginning. Little boring...\n");
+<span class="invis-code">    </span>        continue;
+<span class="invis-code">    </span>    } else {
+<span class="invis-code">    </span>    <s>    // We use `%ld` here because `sizeof` returns a long int, not an int</s>
+<span class="invis-code">    </span>        printf("Okido! We'll reserve %ld bytes, starting from byte %d\n", 5 * sizeof(int), firstByte);
+<span class="invis-code">    </span>        break;
+<span class="invis-code">    </span>    }
+<span class="invis-code">    </span>} while ( (0 > firstByte) || (firstByte == 0) );<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Oooh! A loop. How fancy! Now... what does it do?
+                    <br>
+                    Great question! Let me begin at the end and work my way to
+                    the top of the code we just wrote; what is that thing to the
+                    right of <code>while</code>?
+                    <br>
+                    That is a condition, just like we saw in the <code>if</code>
+                    and <code>else if</code>-statements before. This one just
+                    looks more difficult because of the fact that we use the
+                    inclusive OR operator (<code>||</code>) to check two
+                    conditions at the same time. Using this OR means the
+                    condition for the loop is true if its first condition is
+                    met <i>OR</i> if its second condition is met or if both
+                    conditions are met. There is no reason to make conditions in
+                    more difficult in loops than in <code>if</code>-statements.
+                    This just worked to introduce the OR operator to you. There
+                    is also an AND operator (<code>&&</code>) which makes a
+                    condition true if the first condition is met <i>AND</i> the
+                    second condition is met.
+                </p><br><p>
+                    <code>while</code> and <code>do/while</code> loops keep
+                    looping as long as theor condition is met. In this case, if
+                    0 is greater than <code>firstByte</code> <i>OR</i> if
+                    <code>firstByte</code> is equal to zero, the loop continues.
+                </p><br><p>
+                    Speaking of <code>continue</code>ing. I have added new lines
+                    to the <code>if</code>-tree we made before. The
+                    <code>continue</code> I added immediately jumps to checking
+                    the condition for the next run of the loop. If we reach a
+                    <code>continue</code> (by entering a negative number for
+                    example) we will immediately check the condition for the
+                    loop and since it's met, we will start from the top right
+                    away.
+                </p><br><p>
+                    <code>break</code> does not care about the condition of the
+                    loop and breaks the loop regardless of whether its condition
+                    is no longer met. In this example we break the loop of
+                    searching for a non-negative and non-zero value when we find
+                    one.
+                </p><br><p>
+                    To finish, I note the <code>do</code> at the start of the
+                    loop. A <code>do/while</code> like the one we use here,
+                    checks its condition at the <i>end</i> of a loop cycle. This
+                    means that the code in the loop will run at least once,
+                    regardless of whether its condition is met at the start of
+                    the loop. A <code>while</code> loop checks its condition at
+                    the beginning of a loop cycle. That means that the loop will
+                    not even start if the condition is not met when you reach
+                    the loop. <code>while</code> loops are written like
+                    <code>while (...) { ... }</code>.
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li>le_mattt@mtmas.nl</li>
+            </ul>
+        </footer>
+    </body>
+</html>

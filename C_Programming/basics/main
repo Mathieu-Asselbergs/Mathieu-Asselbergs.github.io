@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../../resources/CopyCode.js"></script>
+        <title>Main function</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>The entry point of your program: <code>int main()</code></h1>
+
+            <section id="intro">
+                <p>
+                    Every program in C starts in the <code>main</code> function.
+                    This function is always defined with <code>int</code> as the
+                    return type (written before the function name), with
+                    <code>main</code> as the name of the function and usually
+                    with nothing or <code>void</code> inside the parentheses:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents">int main() {
+<s>    // Your incredibly amazing code!</s>
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Note that after the parentheses (), there are braces {}
+                    which specify the function body of <code>main</code>.
+                    <code>main</code> only executes whatever is written inside
+                    of these braces. The following code is incorrect and will
+                    cause the compiler to throw an error:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+<s>    // A (small) masterpiece made by you</s>
+}
+
+printf("Hello there!");</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Although the command on the last line is correct, the
+                    compiler does not accept this program because the command is
+                    not included in the braces of a function; in this case
+                    <code>main</code>.
+                </p><br><p>
+                    Lastly, you are not free to define arguments for
+                    <code>main</code>. That is, you cannot ask for any values in
+                    the parentheses of main. There are a few exceptions,
+                    but those are outside the scope of this basic introduction.
+                    All you should know now is that the following is not
+                    accepted because it tries to take arguments <code>a</code>
+                    and <code>c</code> (in the parentheses right after the
+                    function name), which is forbidden:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents">int main(int a, char c) {
+<s>    // A (small) masterpiece made by you</s>
+}</pre>
+                </div>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "Had to start somewhere"!</h2>
+                </a>
+
+                <p>
+                    It looks like you found your own starting point to learn C.
+                    This lesson, while trivial after some time working with the
+                    language was a brilliant start (or refresher) to build upon.
+                    Now, go put your new knowledge to work and get back to your
+                    assignment, project or study! You got this!
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

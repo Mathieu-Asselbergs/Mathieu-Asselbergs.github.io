@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../resources/CopyCode.js"></script>
+        <title>Introduction to C</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Chapter 01: A first look at the mysteries of C</h1>
+
+            <section id="intro">
+                <p>
+                    C is in itself a small language in terms of syntax that you
+                    need to remember. This first lesson covers the syntax for
+                    data types, basic program input and output and control flow.
+                    <br>
+                    The most important concepts from this lesson are
+                    understanding how to declare and update variables of the
+                    <i>basic</i> datatypes (no arrays or pointers),
+                    understanding the formatting strings in <code>printf</code>
+                    and <code>scanf</code> and knowing the syntax for
+                    <code>if</code> and <code>switch</code>-statements and
+                    <code>for</code>, <code>while</code> and
+                    <code>do/while</code> loops. These concepts will occur in
+                    every program you write and are thus very important. Luckily
+                    this also means you get to practice with them a lot.
+                </p>
+            </section>
+            
+            <section id="datatypes-and-variables">
+                <a href="#datatypes-and-variables" class="section-link">
+                    <h2>Datatypes and variables: your program's memory</h2>
+                </a>
+
+                <p>
+                    In programming languages you store information in variables.
+                    Variables have three parts to them: a datatype, a name and a
+                    value. And while all of these are essential, the first is
+                    especially important. By specifying the datatype of a
+                    variable, you describe how many bytes (8 bits; 8 1s or 0s)
+                    need to be reserved for your variable and how these bytes
+                    must be interpreted.
+                </p><br><p>
+                    The amount of bytes that needs to be
+                    reserved for a variable of a certain datatype can be found
+                    by calling <code>sizeof(your_datatype)</code>. This size can
+                    differ per datatype and in some cases also per machine you
+                    run your code on.
+                </p><br><p>
+                    In the code cell below, you can find a list of the datatypes
+                    you'll likely use most often. As a first Introduction to
+                    more complex data types, this list also includes arrays and
+                    pointers. These datatypes will get full attention in future
+                    chapters and you need not remember and use them now.
+                </p>
+                
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents">int main() {
+<s>//  Datatype     Variable name      Value</s>
+    int          roundNumber      = -17;        <s>// Integers are signed (+ or -) round numbers</s>
+    unsigned int posRoundNumber   = 415;        <s>// Unsigned integers are strictly positive round numbers</s>
+    long int     bigRoundNumber   = 7839471389; <s>// An integer that is bigger than or as big as an `int`</s>
+    short int    smolRoundNumber  = 1234;       <s>// An integer that is smaller than or as small as an `int`</s>
+    float        smolDecimal      = 3.1415f;    <s>// Floating point numbers are decimal numbers for a computer</s>
+    double       bigDecimal       = 2.7182;     <s>// Doubles are decimal numbers with twice the precision of floats</s>
+    char         asciiCharacter   = '+';        <s>// Chars are 8-bit numbers that represent characters in ASCII</s>
+
+<s>    // Arrays (or strings if it's an array of `char`s)</s>
+    int          listOfNumbers[6] = {1, 1, 2, 3, 5, 8};
+    char         stringOfText[7]  = {'M', 'a', 't', 't', 't', 't', '\0'};
+
+<s>    // Pointers</s>
+    double*      bigDecimalPtr    = &bigDecimal;
+    void*        randomPtr        = 0xC0FFEE99;
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    An important thing to note here is that we do not
+                    <i>have</i> to provide a value when we declare a variable.
+                    <code>int uninit;</code> is an accepted and full
+                    declaration by itself. When you write this, your program
+                    will still reserve memory for an integer, but it will not
+                    set a value in that memory.
+                </p><br><p>
+                    Much like before, this variable declaration specified how
+                    many bytes of memory should be reserved and how to interpret
+                    the value stored in those bytes. By not giving a value for
+                    the variable, your program will use whatever is stored in
+                    the memory you now reserved as your integer. This value is
+                    essentially random! Making any assumptions about its value
+                    and working with those assumptions in your program will lead
+                    to undefined behavior (UB), which is when your program's
+                    execution is not properly defined due to randomness.
+                </p>
+            </section>
+
+            <section id="arithmetic-expressions">
+                <a href="#arithmetic-expressions" class="section-link">
+                    <h2>Changing the values of variables with arithmetic</h2>
+                </a>
+
+                <p>
+                    Now that we have values stored in memory, we may want to
+                    change them before doing anything else with them. We do this
+                    with arithmetic operations that use the <code>+</code>,
+                    <code>-</code>, <code>*</code> and <code>/</code> operators.
+                    This code cell contains an overview of these operators as
+                    well as a few shorthands and exceptions: 
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents">int main() {
+    float a = 7.0f;
+    int b = 2;
+    int c = 8;
+
+    int intSum = b + c;         <s>// intSum = 10</s>
+    int intDif = c - b;         <s>// intDif = 6</s>
+    int intMul = b * c;         <s>// intMul = 16</s>
+    int intDiv = c / b;         <s>// intDiv = 4</s>
+
+    float intFloatSum = a + b;  <s>// intFloatSum = 9.0f</s>
+    float intFloatDif = a - b;  <s>// intFloatDif = 5.0f</s>
+    float intFloatMul = a * b;  <s>// intFloatMul = 14.0f</s>
+    float intFloatDiv = a / b;  <s>// intFloatDiv = 3.5f</s>
+
+<s>    // Increment b by 1 before adding it to c. Increment c after summing.</s>
+    int incSum = ++b + c++;     <s>// incSum = 11, b = 3, c = 9</s>
+
+<s>    // Decrement the new b by 1 after adding it to the new c</s>
+    int decSum = b-- + c;       <s>// decSum = 12, b = 2, c = 9</s>
+
+<s>    // Divide b by 2</s>
+    b /= 2;                     <s>// b = 1</s>
+
+<s>    // Add 7 to c</s>
+    c += 7;                     <s>// c = 16</s>
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    An interesting addition is that multiplication and division
+                    always occur before addition and subtraction and that if an
+                    expression contains multipe additions or multiplications,
+                    they are calculated from left to right. The order of
+                    operations can be altered by using parentheses.
+                </p><br><p>
+                    Also, as a sidenote, it is possible to cast from one
+                    datatype to another by prefixing an expression with
+                    <code>(your_datatype)</code> as shown here:
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents">int main() {
+    float a = 7.0f;
+    float b = 2.0f;
+    int div = (int)(a / b);     <s>// div = 3</s>
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Casting to another datatype may lose some information and
+                    therewith change the data of your variable. In this example,
+                    the cast from a <code>float</code> to an <code>int</code>
+                    drops the decimal places.
+                </p>
+            </section>
+            
+            <section id="printing-and-reading">
+                <a href="#printing-and-reading" class="section-link">
+                    <h2>Storing and printing information</h2>
+                </a>
+
+                <p>
+                    Next up, time to strike up a conversation with our program.
+                    Knowing how to interact with a program will make whatever
+                    you decide to write 10 billion percent more interesting! We
+                    talk to our program with <code>printf</code> and
+                    <code>scanf</code> as shown below:
+                </p>
+                
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+<s>    // Integer variables to store the input in [uninitialized; random]</s>
+    int faveNum1, faveNum2;
+
+<s>    // A prompt to print about what type of input we want</s>
+    printf("Hello there, what are your two favorite integers? ");
+
+<s>    // A statement for reading the user input</s>
+    scanf(" %d %d", &faveNum1, &faveNum2);
+
+    printf("No way! %d is my favorite too!\n", faveNum2);
+    printf("I like %d better than %d, though.\n", faveNum1 + 5, favenum1);
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Let's look at this step by step and make sure we understand
+                    why and how this program works.
+                    <br>
+                    We start by defining two variables of type <code>int</code>
+                    without giving initial values. As we discussed above, this
+                    means we cannot say anything about the values that are
+                    stored in these variables. However, since we do not use
+                    these variables before overwriting their values with
+                    <code>scanf</code> there is no harm in leaving them
+                    uninitialized.
+                </p><br><p>
+                    Next up, we print a string of text which indicates what type
+                    of input we want our user to provide. We leave a space at
+                    the end so that the user's input is not stuck directly to
+                    the prompt.
+                </p><br><p>
+                    Now comes a scary looking line. WHAT, the hell, is this?
+                    <br>
+                    Well, there are two big parts to this line. First up is the
+                    format string (the part in double quotes). The
+                    <code>%d</code>s in this string describe integers. The
+                    spaces in front of it mean that we should ignore the
+                    whitespace that comes before the integers. If the user spams
+                    spacebar and tab and enter before giving an integer, the
+                    program will disregard that.
+                    <br>
+                    Next up are the <code>&faveNum1</code> and
+                    <code>&faveNum2</code>. This ampersand (&) notation is the
+                    same as the one I used in the example for the pointed data
+                    type's value above. It means 'a reference to faveNum1' and
+                    you will learn more about it when you work with pointers.
+                    For now, you can just remember that you should add an
+                    ampersand (&) in front of the variable names when you use
+                    <code>scanf</code>.
+                    <br>
+                    Lastly, notice that this program will look for two integers
+                    as input and thus needs two references after the format
+                    string, in order of the inputs.
+                </p><br><p>
+                    The last part prints some text with the input we provided.
+                    Note that <code>printf</code> can also use <code>%d</code>
+                    in its format string but that here, you use variable names
+                    <i>without</i> an ampersand (&).
+                    <br>
+                    The <code>\n</code> at the end is called the newline escape
+                    character and it represents an enter, or moving to the next
+                    line in your output.
+                </p>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>That's enough for now</h2>
+                </a>
+
+                <p>
+                    That was a LOT to take in at once. Most of these things will
+                    start to make more sense once you learn more about the
+                    concepts that are at play. Learning about functions will
+                    make it make sense why <code>printf</code> and
+                    <code>scanf</code> are written the way they are. Learning
+                    about references and pointers reveals why we use an
+                    ampersand (&) when calling <code>scanf</code> and why we do
+                    not use it for <code>printf</code>.
+                </p><br><p>
+                    For now, this was a great step to take. Have a moment to
+                    yourself and get cracking on chapter 02 when you're ready.
+                    <br>
+                    Great job on taking the first step (again)! I'll be here to
+                    help you with the next steps.
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li>le_mattt@mtmas.nl</li>
+            </ul>
+        </footer>
+    </body>
+</html>

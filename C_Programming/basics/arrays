@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../../resources/CopyCode.js"></script>
+        <title>An intro to C's dark arts</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Grouping valus of the same data type with arrays</h1>
+
+            <section id="intro">
+                <p>
+                    Whenever there is a need to store multiple related values of
+                    the same data type, you can of course define all these
+                    values separately. And while this most surely is a fun way
+                    to spend your afternoon, it may be more useful to add a data
+                    type to your arsenal that is designed specifically for this
+                    task: the array.
+                </p>
+            </section>
+
+            <section id="declaration">
+                <a href="#declaration" class="section-link">
+                    <h2>Brackets <code>[]</code> and braces <code>{}</code>: array declaration</h2>
+                </a>
+
+                <p>
+                    Arrays are themselves a data type, which means that you can
+                    declare variables of an array type. Such a type has two
+                    parts to it: the type of value that it stores and the amount
+                    of values that it stores. The syntax for the corresponding
+                    value of such a type is a comma-separated list of values in
+                    braces. Full array declarations look like this:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>float vec1[3] = {3.1415, 1.4142, 2.7183};   <s>// (3.1415, 1.4142, 2.7183)</s>
+<span class="invis-code">    </span>float vec2[3] = {0.0415};                   <s>// (0.0415, 0.0, 0.0)</s>
+<span class="invis-code">    </span>float vec3[3] = {};                         <s>// (0.0, 0.0, 0.0)</s>
+<span class="invis-code">    </span>float vec4[3];                              <s>// (?.?, ?.?, ?.?)</s><span class="invis-code">
+    
+    printf("vec1 = (%6.4f, %6.4f, %6.4f)\n", vec1[0], vec1[1], vec1[2]);
+    printf("vec2 = (%6.4f, %6.4f, %6.4f)\n", vec2[0], vec2[1], vec2[2]);
+    printf("vec3 = (%6.4f, %6.4f, %6.4f)\n", vec3[0], vec3[1], vec3[2]);
+    printf("vec4 = (%6.4f, %6.4f, %6.4f)\n", vec4[0], vec4[1], vec4[2]);
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    This declaration is very similar to that of a single value
+                    and only differs in that the name of the variable is now
+                    followed by the size of the array in brackets
+                    <code>[]</code>. The associated values can use more
+                    explanation though.
+                </p><br><p>
+                    To declare an array, you can use a list of values of any
+                    length up to the specified length. The <code>vec1</code>
+                    example shows an array in which all entries are explicitly
+                    defined. In case you specify fewer values than allowed, but
+                    still give a list, the remaining values are always defined
+                    as <code>0</code>. This case holds for the exaples of
+                    <code>vec2</code> and <code>vec3</code> above. In case no
+                    value is initially given (i.e. you give no list; empty or
+                    not), C does not write any values to the memory that it
+                    reserves for your array. This means that the values in your
+                    array are practically random. This is the case for the
+                    <code>vec4</code> example, where we give no list to
+                    initialize the array with.
+                </p><br><p>
+                    Using values of an uninitialized variable in your program
+                    leads to undefined behavior. This is because you cannot make
+                    any assumptions about these values. Using them in a context
+                    where you expect these values to have a certain value may
+                    lead to unexpected results or crashing programs.
+                </p>
+            </section>
+
+            <section id="indexing">
+                <a href="#indexing" class="section-link">
+                    <h2>Getting and setting data through indexing</h2>
+                </a>
+
+                <p>
+                    Given that arrays contain multiple values, there must surely
+                    be a way to select a specific element to use. And there is!
+                    To select a specific value to set, change or retrieve you
+                    can select the element at a specific index in the array by
+                    writing the array name, followed by brackets containing the
+                    index of your choice. Do note that the indices of an array
+                    start at 0, not 1. Hence to refer to the first element in an
+                    array, you use index 0. In the example below, we set and
+                    read every value of the <code>vec1</code> example
+                    individually using array indexing.
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>float vec1[3];          <s>// No need to initialize as we overwrite before use</s>
+
+<span class="invis-code">    </span>vec1[0] = 3.1415;       <s>// Set the first element of `vec1`</s>
+<span class="invis-code">    </span>vec1[1] = 1.4142;       <s>// Set the second element of `vec1`</s>
+<span class="invis-code">    </span>vec1[2] = 2.7183;       <s>// Set the third element of `vec1`</s>
+
+<span class="invis-code">    </span>printf("vec1 = (%6.4f, %6.4f, %6.4f)\n", vec1[0], vec1[1], vec1[2]);<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    A common error that comes with indexing is using indices
+                    that fall outside of your array. This can be either because
+                    you accidentally use a negative index or an index that is
+                    outside of the defined bounds (length) of your array. Either
+                    case will be accepted by the compiler as it is correct C
+                    syntax. However, when you run this code, it is likely (but
+                    not impossible) that the computer memory at this wrong index
+                    does not belong to your program. This is another example of
+                    undefined behavior. This time however, C is able to detect
+                    when you access memory that does not belong to your program.
+                    When it detects this, your program will crash and you will
+                    see a <code>Segmentation fault</code>. An example of an
+                    incorrect program that may come from not understanding that
+                    indexing starts at 0 is shown here:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>float fibSeq[6] = {0, 1, 1, 2, 3, 5};
+
+<span class="invis-code">    </span>for (int i = 1; i &lt;= 6; i++) {
+<span class="invis-code">    </span>    printf("Element %d in the fibonacci sequence is: %d\n", i, fibSeq[i]);
+<span class="invis-code">    </span>}<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    This program incorrectly assumes that the first index is 1
+                    and the last index is the 6; the length of the array. The
+                    resulting behavior is a loop that prints the last 5 numbers
+                    in the array where the first 5 were expected and where the
+                    last call to <code>printf</code> may result in a
+                    segmentation fault (accessed memory that does not belong to
+                    a variable in our program).
+                </p>
+            </section>
+
+            <section id="context">
+                <a href="#context" class="section-link">
+                    <h2>Painting a picture of context with <code>typedef</code></h2>
+                </a>
+
+                <p>
+                    So. We can make arrays. W O W! Problem is that for example
+                    <code>unsigned char c1[3];</code> does not convey enough
+                    information on its own to tell you that we describe a color
+                    which has a value for red, green and blue, all of which are
+                    expressed by an 8-bit integer. We can define different names
+                    for types to help us understand what they mean in the
+                    context of our program by using the <code>typedef</code>
+                    keyword. We can, for instance, rename the types in the
+                    program above as follows to help us understand what
+                    <code>c1</code> is:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>typedef unsigned char UInt8;
+typedef UInt8 RgbColor[3];
+
+int main() {
+    RgbColor c1 = {255, 0, 0};<span class="invis-code">
+
+    printf("c1 has RGB values R: %d, G: %d, B: %d\n", c1[0], c1[1], c1[2]);</span>
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Look at that! This program is clear about what the
+                    interpretation of its types should be. We exchanged
+                    <code>unsigned char</code> for the clear type definition
+                    <code>UInt8</code> so that it's clear we talk about
+                    unsigned 8-bit integers. Moreover, we defined an
+                    <code>RgbColor</code> type, which is basically just an array
+                    of three unsigned 8-bit integers as the type definition
+                    shows.
+                </p><br><p>
+                    We can now use our <code>RgbColor</code> type as we would
+                    expect. Use it as the data type of a variable and give it an
+                    appropriate value. In this case, it is an array of a known
+                    length, so there is no length for us to specify anymore. We
+                    can just provide values as we would for an array of three
+                    <code>unsigned char</code> values. Indexing also works the
+                    same as <code>RgbColor</code> is just a different name for
+                    the same array type.
+                </p>
+            </section>
+
+            <section id="intro-ptrs">
+                <a href="#intro-ptrs" class="section-link">
+                    <h2>Introducing the dark arts of C's pointers</h2>
+                </a>
+
+                <p>
+                    In the next chapter we will cover what many consider to be
+                    the most difficult part of C: pointers. However, based on
+                    the information given in this explanation of arrays, I
+                    believe that the concept of a pointer doesn't have to be
+                    difficult to understand. In fact, let me illustrate the
+                    <i>idea</i> of a pointer in code you already understand.
+                    Please note that the notation I use here is not the notation
+                    of pointers. These will be explained in the next lesson. I
+                    express the idea of a pointer in terms of things you already
+                    understand. Pay attention! This will be interesting.
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>typedef unsigned char Byte;                 <s>// Bytes are simply 8-bit numbers</s>
+typedef Byte CompMem[1024];                 <s>// Computer memory can be seen as a huge array of bytes</s>
+typedef int MemAddr;                        <s>// A number that represents a byte in memory</s>
+
+int main() {
+    <s>// Consider that we work with a computer with 1024 bytes of memory</s>
+    CompMem mem;
+
+    <s>// char name[10] = "Mattttttt";</s>
+    MemAddr stringPtr = 415;
+    mem[stringPtr + 0] = 'M';
+    mem[stringPtr + 1] = 'a';
+    mem[stringPtr + 2] = 't';
+    mem[stringPtr + 3] = 't';
+    mem[stringPtr + 4] = 't';
+    mem[stringPtr + 5] = 't';
+    mem[stringPtr + 6] = 't';
+    mem[stringPtr + 7] = 't';
+    mem[stringPtr + 8] = 't';
+    mem[stringPtr + 9] = '\0';
+
+    <s>// int faveNum = 620590126;      // = 00100100 11111101 01110100 00101110</s>
+    MemAddr intPtr = 45;
+    mem[intPtr + 0] = 0b00101110;
+    mem[intPtr + 1] = 0b01110100;
+    mem[intPtr + 2] = 0b11111101;
+    mem[intPtr + 3] = 0b00100100;
+<span class="invis-code">
+    // Don't mind the syntax hell here. This is not explained yet.
+    // I just wanted to make to print the data in our memory.
+    printf("%s\n", &mem[stringPtr]);
+    printf("%s\n", &mem[stringPtr + 2]);        // char justTs[8]
+    printf("%d\n", *(int *)&mem[intPtr]);
+</span>}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    "Mathieu, what the fucc?! How am I supposed to understand
+                    <i>this</i> crap??"
+                </p><br><p>
+                    Excellent question!
+                </p><br><p>
+                    Let me start by saying that a pointer stores a memory
+                    address, which you can think of as an index in the array
+                    that is your computer's memory. In the first part of this
+                    example, I represent storing a string (fancy name for an
+                    array of <code>char</code>s) that contains my name. When I
+                    do this in C, 10 bytes are allocated in memory to store that
+                    string. In this case I 'allocated' 10 bytes in my 1024 byte
+                    computer. The first of those allocated bytes turns out to be
+                    the 415th byte in my computer's memory. This 415, the byte
+                    at which my string's allocated memory begins, is called the
+                    address of my string. All bytes in the string have their own
+                    address. For example, you can imagine the substring
+                    <code>char justTs[8];</code> to be a string with address 417
+                    and length 8. That is, the first byte of that string would
+                    be the 417th byte in memory (where the 't's start in the
+                    original string).
+                </p><br><p>
+                    It is also important to know how larger data types are
+                    represented. An integer, for example, may need 4 bytes
+                    (which you can see by printing <code>sizeof(int)</code>) to
+                    express its value. When I allocate an integer, these 4 bytes
+                    are allocated for it and they all get to hold a part of the
+                    full value. All these parts technically have their own
+                    address. You can use all these addresses, but it makes
+                    little sense to use an address that points to the middle of
+                    an integer.
+                </p><br><p>
+                    I understand that this may still be a complex concept to
+                    wrap your head around. Especially if this is the first time
+                    you encounter pointers. You will understand them better and
+                    better the more you read or hear about them and the more you
+                    use them yourself. You can also read this page another 17
+                    times and still not get it. Give it time. You'll understand
+                    them eventually.
+                </p>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "Apprentice of the dark arts"!</h2>
+                </a>
+
+                <p>
+                    With this newfound knowledge of arrays, it finally becomes
+                    feasible to store related values in a more elegant manner
+                    than in individual <code>c1</code>, <code>c2</code>,
+                    <code>c3</code>, ... variables. These arrays can give an
+                    introduction to the concepts of pointers and in the next
+                    lesson, I will show you just how closely these two topics
+                    are truly related. Lastly, with an understanding of
+                    <code>typedef</code>, reality can be whatever you want. You
+                    are starting to understand more and more advanced aspects of
+                    C. The dark arts welcome you.
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

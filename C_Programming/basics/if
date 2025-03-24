@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../../resources/CopyCode.js"></script>
+        <title>If statements</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Deciding what to do: <code>if</code>-statements</h1>
+
+            <section id="intro">
+                <p>
+                    You can use the variables you keep your program's data in to
+                    decide trigger specific pieces of code. An
+                    <code>if</code>-statement holds a piece of code that is only
+                    executed if at the time of starting the statement, the
+                    condition in its parentheses is true.
+                </p>
+            </section>
+
+            <section id="general-shape">
+                <a href="#general-shape" class="section-link">
+                    <h2>General shape</h2>
+                </a>
+
+                <p>
+                    The general shape of an <code>if</code>-statement contains:
+                </p>
+
+                <ul>
+                    <li>the <code>if</code> keyword</li>
+                    <li>a condition <i>in parentheses</i></li>
+                    <li>
+                        a code block (indicated by braces <code>{}</code>) that
+                        contains the code that is to be run when the condition
+                        is true
+                    </li>
+                </ul>
+
+                <p>
+                    Additionally, you may add more conditions by adding as many
+                    <code>else if</code> clauses as you wish. These work the
+                    same as an <code>if</code>-statement in that they too
+                    require a condition in parentheses and a code block in
+                    braces to execute when the condition is met.
+                    <br>
+                    You may also add an <code>else</code> at the very bottom of
+                    your <code>if</code>-'tree'. This clause takes no condition
+                    and is run if none of the conditions in its
+                    <code>if</code>-tree are met.
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>int petals = 17;
+
+<span class="invis-code">    </span>if (petals > 30) {
+<span class="invis-code">    </span>    printf("Too many to count! I don't have that kind of time!\n");
+<span class="invis-code">    </span>}
+<span class="invis-code">    </span>
+<span class="invis-code">    </span><s>// The modulo (`%`) operator calculates the remainder after division.</s>
+<span class="invis-code">    </span><s>// Here it calculates the remainder after division by 2 to check if the number is even.</s>
+<span class="invis-code">    </span>else if (petals % 2 == 0) {
+<span class="invis-code">    </span>    printf("They love me not...\n");
+<span class="invis-code">    </span>}
+<span class="invis-code">    </span>
+<span class="invis-code">    </span>else {
+<span class="invis-code">    </span>    printf("They love me!\n");
+<span class="invis-code">    </span>}<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    In this program we simulate a French
+                    <i><a href="https://en.wikipedia.org/wiki/He_loves_me..._he_loves_me_not" style="color: var(--text-color);">petal picking game</a></i>.
+                    In case our flower has too many petals, we refuse to count.
+                    If we find it in ourselves to count the amount of petals,
+                    though, we find that fate decides love if the amount of
+                    petals is odd.
+                </p><br><p>
+                    In our <code>if</code>-statement, we check the conditions in
+                    the order in which they appear. Hence, we start by checking
+                    the amount of petals. If this is not over 30, we check if
+                    the amount of petals is even and in case it is, we subtly
+                    communicate that Tinder may be a suitable next step. In case
+                    our flower had more than 30 petals, only the code block for
+                    that condition would have been executed. The check for an
+                    even amount of petals will <i>not</i> be run!
+                </p><br><p>
+                    If we have a flower with a small, odd number of petals (that
+                    is, neither condition was met), the code block for the
+                    <code>else</code>-clause is executed. Much like with the
+                    <code>else if</code> statements, the <code>else</code>
+                    clause is only executed if none of the conditions in its
+                    <code>if</code>-tree were met. If a condition was met, the
+                    <code>else</code> block will simply be skipped.
+                </p>
+            </section>
+
+            <section id="conditions">
+                <a href="#conditions" class="section-link">
+                    <h2>The terms and conditions</h2>
+                </a>
+
+                <p>
+                    The condition in an <code>if</code>-statement can be as
+                    elaborate as we want it to be. To make it more elaborate,
+                    you can choose to chain together multiple individual
+                    conditions using: 
+                </p>
+
+                <ul>
+                    <li><code>NOT</code> - true only if the condition is false: <code>!cond</code></li>
+                    <li><code>AND</code> - true only if both conditions are met: <code>cond1 && cond2</code></li>
+                    <li><code>OR</code> - true if either or both conditions are met: <code>cond1 || cond2</code></li>
+                </ul>
+
+                <p>
+                    With these combinators, you can make whatever kind of super
+                    strict condition that you want:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>int day = 1;
+<span class="invis-code">    </span>int month = 8;
+<span class="invis-code">    </span>char weekday = 'M';
+<span class="invis-code">    </span>float temperature_C = 24.7f;
+<span class="invis-code">    </span>
+<span class="invis-code">    </span>if (
+<span class="invis-code">    </span>    day == 1 &&
+<span class="invis-code">    </span>    month == 8 &&
+<span class="invis-code">    </span>    (weekday == 'M' || weekday == 'm') &&
+<span class="invis-code">    </span>    !(temperature_C < 20.0f)
+<span class="invis-code">    </span>)
+<span class="invis-code">    </span>{
+<span class="invis-code">    </span>    printf("Finally! My birthday is on a warm monday again!\n");
+<span class="invis-code">    </span>}<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Two last things to note:
+                    <br>
+                    The structure of the <code>if</code>-statement in the code
+                    cell above is just as valid as that of the first code cell
+                    on this page. It matters that you have parentheses with a
+                    condition after the <code>if</code>
+                    (or <code>else if</code>) keyword and a code block in braces
+                    after that. Where you put these is completely up to you.
+                    Heck, you could put entire <code>if</code>-trees on a single
+                    line if you wanted to. Just be aware that this may cost you
+                    some friends... The clearer you make your code, the easier
+                    it is for you to understand it. Find a notation for these
+                    parentheses and braces that works for you and use it.
+                    Anything goes!
+                    <br>
+                    Lastly, conditions are represented by numbers:
+                    <code>1</code> for true, <code>0</code> for false. This
+                    means that replacing your condition by <code>1</code> will
+                    yield an <code>if</code>-statement with a condition that is
+                    always true. In fact, C considers any number that is not
+                    <code>0</code> to represent true. Having <code>415</code> as
+                    condition will also always be considered true.
+                </p>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "What if..?"!</h2>
+                </a>
+
+                <p>
+                    Yet another lesson learned, and an important one as well!
+                    Control flow (especially <code>if</code>-statements) and
+                    conditions show up all over the place and you now know
+                    <i>exactly</i> how to read, write and interpret them. Well
+                    done! I look forward to seeing you in the next lesson!
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../../resources/CopyCode.js"></script>
+        <title>printf</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1><code>printf</code> for printing formatted output</h1>
+
+            <section id="intro">
+                <p>
+                    We use the <code>printf</code> function to print out text to
+                    the console. Basic use of this function includes text (which
+                    we call a string) and nothing else. For example:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+    printf("Hello world!\n");
+    printf("I'll show you what I'm made of today!");
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    The <code>\n</code> character at the end of the first line
+                    is what we call the newline character. Printing this
+                    character moves whatever output is next to the line below
+                    the line on which you are currently printing output. In this
+                    example, the <code>\n</code> makes our output<br><br>
+                    <code>Hello world!<br>I'll show you what I'm made of today!</code><br><br>
+                    instead of<br><br>
+                    <code>Hello world!I'll show you what I'm made of today!</code><br><br>
+                    which is what would have been the output if we removed the
+                    <code>\n</code> at the end of the first line.
+                </p>
+            </section>
+
+            <section id="formatting">
+                <a href="#formatting" class="section-link">
+                    <h2>Including variable values through formatting</h2>
+                </a>
+
+                <p>
+                    We can define the text we print in such a way that it
+                    includes the values we have stored in variables by making
+                    use of format tags starting with <code>%</code>. Different
+                    types of variables use different formatting tags. Most
+                    commonly, you will use the following formatting tags:
+                </p>
+
+                <ul>
+                    <li><code>%c</code> for <code>char</code></li>
+                    <li><code>%d</code> for <code>int</code></li>
+                    <li><code>%f</code> for <code>float</code> or <code>double</code></li>
+                    <li><code>%s</code> for strings</li>
+                </ul>
+
+                <p>
+                    These tags are written in the formatting string (the text in
+                    your <code>printf</code> call) and need a variable whose
+                    value they can take. Consider the following example:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+    int i1 = 5;
+    int i2 = 21;
+    int i3 = 67;
+    char initial = 'M';
+
+<s>    // Fine. Remember: `\n` moves to the next line</s>
+    printf("Hello world!\n");
+
+<s>    // Fine, 1 format tag (%c) and one `char` variable to match</s>
+    printf("I call my best friend lil' %c.\n", initial);
+
+<s>    // Fine, 2 format tags (%c, %d) and 2 variable that match</s>
+    printf("Lil' %c believes you'll get all %d credits for 5EIA0!\n", initial, i1);
+
+<s>    // Fine, 3 format tags (%c, %d, %d) and 3 variable that match, IN ORDER</s>
+    printf("My friend lil' %c prefers the number %d to %d.\n", initial, i2, i3);
+
+
+<s>    // BAD, 3 format tags (%c, %d, %d) but only 2 variables given!</s>
+    <span class="invis-code">// </span>printf("The number %d lies between %d and %d.\n", i1, i3);
+
+<s>    // BAD, 2 format tags (%d, %d) but 3 variables given!</s>
+    <span class="invis-code">// </span>printf("I have between %d and %d working braincells", i1, i2, i3);
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    It is importantto notice that you must match up the amount
+                    of format tags (starting with <code>%</code>) and the amount
+                    of variables you add after the text in <code>printf</code>.
+                    Moreover, make sure that your variables' types are the right
+                    types for the format tag you use (for example: 
+                    <code>%c</code> for <code>char</code>).
+                </p>
+            </section>
+
+            <section id="pretty-nums">
+                <a href="#pretty-nums" class="section-link">
+                    <h2>Printing numbers nicely with better format tags</h2>
+                </a>
+
+                <p>
+                    Numbers have a default way of being printed which is not
+                    always what you think is prettiest or what you're looking
+                    for. Luckily, you can specify the amount of space your
+                    number takes up on the screen by changing the format tag you
+                    use. By writing a number between the <code>%</code> sign and
+                    the specifier <code>d</code> or <code>f</code> you can set
+                    the width in which your number will be printed if it fits.
+                    In case your number does not fit, it will exceed the set
+                    width. When you use <code>%f</code>, you can also specify
+                    the precision with which you want to print your number.
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+    printf("%3d\n", 7);           <s>// Prints "  7"      [3 spaces]</s>
+    printf("%2d\n", 221);         <s>// Prints "221"      [3 spaces]</s>
+    printf("%5.1f\n", 13.521);    <s>// Prints " 13.5"    [5 spaces, 1 decimal]</s>
+    printf("%9.4f\n", 13.521);    <s>// Prints " 13.5210" [9 spaces, 4 decimals]</s>
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Remark that the first number after the <code>%</code> is the
+                    minimal length in spaces of the number to be printed. In
+                    case you write something of the form <code>%w.df</code>,
+                    you will have a number with a minimal width of
+                    <code>w</code> spaces and exactly <code>d</code> decimal
+                    places.
+                </p>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "Striking up a conversation"!</h2>
+                </a>
+
+                <p>
+                    Now that you know how to properly show your program's
+                    output, go make the friendliest user interaction you can
+                    think of! Ooorr... get back to the assignment(s) and nail
+                    those. Best of luck either way!
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

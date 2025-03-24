@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
+        <script src="../../resources/CopyCode.js"></script>
+        <title>Functions and recursion</title>
+    </head>
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Decluttering your code with functions</h1>
+
+            <section id="intro">
+                <p>
+                    Functions are exactly the type of caffeine-fueled miracle
+                    you need when you're programming your next masterpiece in C.
+                    They basically represent a block of code that you can call
+                    from anywhere else in your code by writing just a single
+                    line! Moreover, functions define a code block in one place
+                    so that it can be reused in other places without having to
+                    repeat all the code inside. This means that you have to
+                    write less code <i>and</i> that if you have to update your
+                    code, you only have to do this in one place. No small errors
+                    when rewriting the same code in 17 places, no overlooked
+                    code you should have changed when you changed it in the
+                    other 16 places. Functions are here to improve your code,
+                    your productivity and your laziness by a couple of orders of
+                    magnitude!
+                </p>
+            </section>
+
+            <section id="syntax">
+                <a href="#syntax" class="section-link">
+                    <h2>Defining a function, its input and its output</h2>
+                </a>
+
+                <p>
+                    The nice things about an introduction to functions is that
+                    you have already seen most of the syntax before. You have
+                    seen a function definition in the form of the
+                    <code>int main()</code> function you've defined countless
+                    times already. You've also seen function calling when you
+                    used <code>printf</code> and <code>scanf</code>. In this
+                    following example, I will illustrate everything there is to
+                    know about function definitions with references to function
+                    knowledge you already have.
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int product(int a, int b) {
+    return a * b;
+}
+
+void printProd3(int a) {
+    int prod = product(a, 3);
+    printf("The product of %d and 3 is %d\n", a, prod);
+}
+
+int main() {
+    printProd3(7);
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    I have four things I'd like to point out in this cell.
+                    Firstly, looking at all lines in the <code>main</code> and
+                    <code>printProd3</code> functions, you see that all function
+                    calls look the same: it's the name of the function, followed
+                    by parentheses with all arguments.
+                </p><br><p>
+                    Which brings me to arguments, or parameters, or inputs. Call
+                    them whatever, but make sure you know I'm talking about the
+                    variables that are defined in the parentheses in your
+                    function definition. Our three example functions have
+                    different amounts of parameters and may just as well have
+                    different data types as well. These parameters represent the
+                    input that you should give when you invoke (= call, = use)
+                    your function. Specify 5 integers and 3 characters? Now you
+                    can only call that function if you pass along those 8
+                    arguments. You can choose to specify no parameters, but you
+                    must always have (potentially empty) parentheses for a
+                    complete function definition. Speaking of necessary for a
+                    complete function definition...
+                </p><br><p>
+                    "Wow, what a beautiful and seemless and definitely not
+                    forced transition into the next point of interest,
+                    Mathieu!" Why thank you. This next piece deserved a fancy
+                    introduction as it is remarkably important.
+                    The <code>int</code> and <code>void</code> at the start of
+                    of our function definitions. What's up with those?
+                    <br>
+                    That is the return type of the function. If your function
+                    has some form of output, this is how you specify it. For
+                    example, the <code>product</code> function, takes two
+                    integers and calculates their product. To return that
+                    result, the <code>int</code> in front of the function
+                    definition states that an integer will be returned as output
+                    and the <code>return</code> keyword inside the function
+                    stops the function's execution and returns the result next
+                    to it. In case the return type is <code>void</code>, your
+                    function returns nothing. You can still use
+                    <code>return</code> in this case, but you don't specify a
+                    value next to it. It is not possible to specify multiple
+                    return types at once. You always specify exactly one.
+                </p><br><p>
+                    A final important point is that a call to a function with a
+                    non-<code>void</code> return type can be used as a value of
+                    that function's return type. That is, <code>product</code>
+                    can be used wherever we expect an <code>int</code> value. In
+                    the example I used it as a value for an <code>int</code>
+                    variable, but I could also have used it as an argument for a
+                    function (think <code>printProd3( product(1, 3) );</code>,
+                    which will be evaluated as <code>printProd3( 3 );</code>),
+                    or as an index for an array, or as the returned value in a
+                    function.
+                </p>
+            </section>
+
+            <section id="scope">
+                <a href="#scope" class="section-link">
+                    <h2>Scope of variables: basically code blocks <code>{...}</code></h2>
+                </a>
+
+                <p>
+                    Code blocks occurred a lot so far. All functions have a code
+                    block, but also <code>if</code>, <code>else if</code> and
+                    <code>else</code> have a code block. As do <code>for</code>,
+                    <code>while</code> and <code>do/while</code>. Heck, you can
+                    write a code block wherever if you want to. When you write a
+                    code block though, be it for a function or a loop or not,
+                    you should know that it comes with a scope. Pay attention,
+                    because will be important later.
+                </p><br><p>
+                    Every function has its own scope; defined by its outermost
+                    braces <code>{}</code>. The variables defined inside these
+                    functions, as well as the arguments defined for it 'live'
+                    within this scope. Whenever the scope ends, C will
+                    deallocate these. This means that the memory that those
+                    variables and arguments occupied will be marked as 'unused'.
+                    The scopes for <code>for</code>-loops work much the same.
+                    In this case, you can consider the loop variable to be an
+                    'argument' to the loop.
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>for (int i = 0; i &lt; 5; i++) {}        <s>// This loop does nothing 5 times</s>
+
+<span class="invis-code">    </span><s>// `i` does not 'live' anymore at this point, so we will get an error.</s>
+<span class="invis-code">    </span><s>// It was defined in the `for`-loop scope.</s>
+<span class="invis-code">    // </span>printf("%d\n", i);<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Here, loop variable <code>i</code> belongs to the scope of
+                    the <code>for</code>-loop and is deallocated and thus not
+                    usable outside of that scope. A similar argument explains
+                    why other functions cannot simply use variables defined in
+                    the scope of the <code>main</code> function. The way to pass
+                    variables around is as arguments, which <i>are</i>
+                    considered to be included in a function's scope.
+                </p><br><p>
+                    Now you may or may not wonder what happens to scopes within
+                    scopes. What scope rules apply for a <code>for</code>-loop
+                    in a function, like below?
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int factorial(int n) {
+    int result = 1;
+
+    for (int i = 1; i &lt;= n; i++) {
+        result *= i;
+    }
+
+    return result;
+}<span class="invis-code">
+
+int main() {
+    printf("6! = %d\n", factorial(6));
+}
+</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Well, here we see that the nested scope of the loop can
+                    access variable from another active scope without any
+                    issues. Inside the <code>for</code>-loop, we can use
+                    variables <code>n</code> and <code>result</code> from the
+                    function's scope as well as the loop variable <code>i</code>
+                    from the loop's own scope. Trying to use <code>i</code>
+                    outside of the loop will not work as that falls outside of
+                    its scope. This does mean that, should we want to, we could
+                    define a variable i of any type after the loop without
+                    errors. What you may recall from the loops lesson is that we
+                    are also free to define <code>int i</code> before the loop
+                    and use it in the loop setup. The following implementation
+                    of the same example defines variable <code>i</code> before
+                    the loop and sets it's starting value in the loop. The
+                    functionality does not chancge. However, since
+                    <code>i</code> now belongs to the function scope rather than
+                    the nested loop scope, it can be used outside of the loop.
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int factorial(int n) {
+    int result = 1;
+    int i;
+
+    for (i = 1; i &lt;= n; i++) {
+        result *= i;
+    }
+
+    return result;
+}<span class="invis-code">
+
+int main() {
+    printf("3! = %d\n", factorial(3));
+}
+</span></pre>
+                </div>
+            </section>
+
+            <section id="recursion">
+                <a href="#recursion" class="section-link">
+                    <h2>A funky kind of looping: recursion</h2>
+                </a>
+
+                <p>
+                    Some functions may want to base their result or their
+                    execution on calls to itself. When a function calls itself,
+                    we say that that function is recursive. A well-known example
+                    of a recursive function is the function that calculates a
+                    number in the Fibonacci sequence:
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int fib(unsigned int n) {
+    if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fib(n-1) + fib(n-2);
+    }
+}<span class="invis-code">
+
+int main() {
+    int n = 7;
+    printf("Entry %d in the Fibonacci sequence is: %d\n", n, fib(n));
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    If <code>n</code> is not equal to 0 or to 1, the we can see
+                    that our <code>fib</code> function clearly calls itself. It
+                    even does so twice! This is a very clear example of a
+                    recursive function. This function also shows us an important
+                    characteristic of recursion: it's like a loop, so we will
+                    need to stop it. Consider simplifying the <code>fib</code>
+                    function to not include the <code>if</code>-tree it has now
+                    and always recurse. Any code you add before the recursive
+                    call will be executed whenever the function is called and
+                    right after it, the function will be called again! That's a
+                    loop! However, it's a little on the endlessly long side. And
+                    we have other things to do that are not waiting forever, so
+                    we will need some way to break the loop. This is exactly why
+                    we had the <code>if</code>-tree in the first place.
+                    Including that meant that there were paths from start to
+                    <code>return</code> in which no recursion occurred. This
+                    breaks the loop.
+                </p><br><p>
+                    Always. <i>ALWAYS!</i> make sure you implement some way for
+                    your recursion to end if you implement a recursive function.
+                    Usually, a simple <code>if</code>-statement can be enough
+                    for this. Make sure you don't forget it!!!
+                </p><br><p>
+                    As a final insight for recursion, note that recursion
+                    happens because we call a function. We do this often, and it
+                    seems like we're using loops, but we're calling functions.
+                    That means that when the recursion stops, execution of code
+                    continues after the function call. A simple program to show
+                    the effect this has is added to the code cell below for you
+                    to run yourself.
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>void shootLaser(unsigned int n) {
+    if (n == 0) {
+        <s>// No recursive call here. Loop will be broken.</s>
+        printf("All batteries connected. Firing laser cannon!!\n");
+        return;
+    }
+
+    printf("Connecting battery %d...\n", n);      <s>// Called before recursing</s>
+    shootLaser(n-1);
+    printf("Disconnecting battery %d...\n", n);   <s>// Called after breaking recursion loop</s>
+}<span class="invis-code">
+
+int main() {
+    shootLaser(4);
+}</span></pre>
+                </div>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "Spring cleaning"</h2>
+                </a>
+
+                <p>
+                    The time of clean code is finally there! No more
+                    <code>main</code> functions that span over 150 lines! No
+                    more changing the same code in multiple places! No more
+                    confusion when you try to use a variable that's out of
+                    scope! Functions are an important building block of nice
+                    code and you now understand (and/or know where to learn) how
+                    to use them. Consider yourself 71.915523% better at
+                    programming than before you read this.
+                    <br>
+                    Functions can still become a <i>lot</i> cooler, though. In
+                    the next two lessons, you'll learn how to return grouped
+                    data as a <code>struct</code> and you'll learn how to write
+                    functions that don't need a return type because they use
+                    pointers, like <code>scanf</code>. Get ready to complete
+                    your knowledge of the fundamentals of C with these next two
+                    lessons. I'll see you there!
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

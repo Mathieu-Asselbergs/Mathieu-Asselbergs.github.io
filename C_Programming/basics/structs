@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
+        <script src="../../resources/CopyCode.js"></script>
+        <title>Structs: composite data types</title>
+    </head>
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Making your own flashy data types with <code>struct</code>s</h1>
+
+            <section id="intro">
+                <p>
+                    From the people that brought you the array, now comes the
+                    new big thing in storing multiple values in one place: the
+                    <code>struct</code>! These<code>struct</code>s combine
+                    multiple variables into a single data type. You can then use
+                    this type as the data type for variables you define in your
+                    program.
+                </p>
+            </section>
+
+            <section id="syntax">
+                <a href="#syntax" class="section-link">
+                    <h2>Basic syntax for <code>struct</code> definition and usage</h2>
+                </a>
+
+                <p>
+                    To define a <code>struct</code> type, you use the syntax
+                    displayed in the code cell below. Much like any other
+                    definition in C, <code>struct</code> types can only be used
+                    after being declared, so it is advised that you declare them
+                    at the top of your project.
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>struct point3d {
+    char name;
+    float x;
+    float y;
+    float z;
+};<span class="invis-code">
+
+int main() {
+    struct point3d p1 = {'A', 4.0f, 1.0f, 5.0f};
+    printf("The x-coordinate of p1 is %f", p1.x);
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Building a variable of your new struct type can be done by
+                    using <code>struct &lt;your_struct_name&gt;</code> as the
+                    type. Much like with arrays, you can initialize the values
+                    for this variable by supplying values of the proper types in
+                    braces.
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+struct point3d {
+    char name;
+    float x;
+    float y;
+    float z;
+};
+
+</span>int main() {
+    struct point3d A = {'A', 4.0f, 1.0f, 5.0f};
+    printf("The x-coordinate of point '%c' is %f", A.name, A.x);
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    <code>struct</code> types have named 'property' variables
+                    that can be accessed by writing the name of the
+                    <code>struct</code> variable, followed by a dot and then
+                    followed by the name of the property. Such notation
+                    represents a variable, much like you already know how to
+                    use. Besides notation, this is nothing special and can be
+                    used in the ways you know you can use a normal variable.
+                </p>
+            </section>
+
+            <section id="typedef">
+                <a href="#typedef" class="section-link">
+                    <h2>Streamlining our use of <code>struct</code>s with <code>typedef</code></h2>
+                </a>
+
+                <p>
+                    In the <a href="https://fine.mtmas.nl/C_Programming/basics/arrays" style="color: var(--text-color)">lesson on arrays</a>
+                    I introduced you to the <code>typedef</code> keyword in C.
+                    This keyword can be used to give types different names to
+                    express what that type represents in the context of your
+                    program. Handily enough, we can also use
+                    <code>typedef</code> to give a better name to our
+                    <code>struct</code> types so that we don't have to write
+                    <code>struct &lt;your_struct_name&gt;</code> every time you
+                    want to make a new variable. An easier type naming can be
+                    accomplished as shown here:
+                </p>
+
+                <br>
+
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span><s>// typedef &lt;base_type&gt; &lt;new_name&gt;</s>
+typedef unsigned char UInt8;
+typedef struct _colorRgb {
+    UInt8 r;
+    UInt8 g;
+    UInt8 b;
+} ColorRgb;
+
+int main() {
+    ColorRgb c1 = {188, 61, 11};
+
+    printf("c1 has RGB values R: %d, G: %d, B: %d\n", c1.r, c1.g, c1.b);
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Now <i>this</i> is context. On top of the improved name that
+                    we also got for arrays, we now also have named data fields!
+                    And although it seemed like we needed to pay the price of
+                    long data type names for that, renaming the
+                    <code>struct _colorRgb {...}</code> type with
+                    <code>typedef</code> totally cleared up any potential
+                    inconveniences.
+                </p>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "Ahw yeah! It's all coming together"</h2>
+                </a>
+
+                <p>
+                    Structs are one of my favorite elements of C because they
+                    can help establish structure in what could otherwise be a
+                    mess of keeping multiple individual variables to describe
+                    a single object. Knowing how to group data into new data
+                    types like this may help you enormously when you start to
+                    work on programs that try to represent complex structures of
+                    data. And all of that for a very small cost! Except for when
+                    you want to copy all the data in a struct... That may get
+                    time-consuming. But that's a story for the next lesson,
+                    where I teach you everything about pointers in C and how
+                    they can supercharge your programs. See you then!
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

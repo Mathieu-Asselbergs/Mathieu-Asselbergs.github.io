@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../../resources/CopyCode.js"></script>
+        <title>scanf</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Reading user input with <code>scanf</code></h1>
+
+            <section id="intro">
+                <p>
+                    To read input from the user you can use <code>scanf</code>,
+                    which is very similar to <code>printf</code> in how to write
+                    it. The main difference is that you use references to
+                    variables (<code>&var</code> instead of <code>var</code>)
+                    and that you use only the format tags and no actual text as
+                    described in this example:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+    int v;
+
+    printf("How many volts is enough volts? ");
+    scanf(" %d", &v);<span class="invis-code">
+    
+    printf("I agree! %d volts is just enough.\n", v);</span>
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    This example asks the user for an integer which it then
+                    stores in variable <code>v</code>. Note here that the format
+                    tag <code>%d</code> corresponds to a variable of type
+                    <code>int</code>. <code>%d</code> would not work for a
+                    <code>char</code> or <code>float</code> for example. As a
+                    refresher, these are the format tags with their associated
+                    types:
+                </p>
+
+                <ul>
+                    <li><code>%c</code> for <code>char</code></li>
+                    <li><code>%d</code> for <code>int</code></li>
+                    <li><code>%f</code> for <code>float</code> or <code>double</code></li>
+                    <li><code>%s</code> for strings</li>
+                </ul>
+            </section>
+
+            <section id="multiple-inputs">
+                <a href="#multiple-inputs" class="section-link">
+                    <h2>Taking multiple inputs with one <code>scanf</code></h2>
+                </a>
+
+                <p>
+                    In case you want to take multiple inputs directly after one
+                    another, you can write multiple format tags and specify
+                    equally many references to variables of the correct type on
+                    the same line:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+</span>int main() {
+    int section;
+    char subsection;
+
+    printf("In what section of the map should I look to find Atlas (num, letter)? ");
+    scanf(" %d %c", &amp;section, &subsection);<span class="invis-code">
+
+    printf("Ah perfect! I'll start looking in section %d%c. Thanks!", section, subsection);</span>
+}</pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Last important thing to pay attention to, is the fact that
+                    we write a space before all the format tags. This makes it
+                    so that C ignores whitespace (spaces, enters and tabs)
+                    inputs when reading your input. If you leave these spaces
+                    out, your program may mistake a user's (accidental) space as
+                    an input and run incorrectly.
+                </p>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "I feel... Understood"!</h2>
+                </a>
+
+                <p>
+                    You now properly reinforced your knowledge of this topic and
+                    are surely ready to ace your assignment(s) and own projects.
+                    Go get 'em!
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../resources/ch_MainStylesheet.css">
+        <link rel="stylesheet" href="../../resources/Codecell.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Alata'>
+        <script src="../../resources/CopyCode.js"></script>
+        <title>Loops Loops Loops Loops Loops Loops ...</title>
+    </head>
+
+    <body>
+        <header class="fine_bar"><a href="https://fine.mtmas.nl">F.I.N.E.</a></header>
+
+        <main>
+            <h1>Repeating code the smart way with loops</h1>
+
+            <section id="intro">
+                <p>
+                    All forms of loops use conditions in some way or another. If
+                    you are unfamiliar with conditions or would like to know
+                    more before you learn about loops, consider reading about
+                    them on
+                    <a href="https://fine.mtmas.nl/C_Programming/basics/if" style="color: var(--text-color)">this</a>
+                    page.
+                </p><br><p>
+                    Let's consider you work at NASA, or the ESA, or Spacex, and
+                    your supervisor gave you the most important task of them
+                    all: developing the countdown mechanism for the launch of
+                    their newest spaceship. And now let's consider that you, for
+                    some reason, do not feel like writing 600
+                    <code>printf</code> calls for the ten minute timer. Let's
+                    consider you'd rather use loops...
+                </p>
+            </section>
+
+            <section id="for-loops">
+                <a href="#for-loops" class="section-link">
+                    <h2><code>for</code>-loops: knowing when to stop</h2>
+                </a>
+
+                <p>
+                    There are two main types of loops in C, the first of which
+                    is useful when you know exactly how often you want to repeat
+                    your code: the <code>for</code>-loop. Let me walk you
+                    through how such a loop is constructed.
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>for (int i = 5; i &gt; 0; i--) {
+<span class="invis-code">    </span>    printf("Just %d more minutes before launch!\n", i);
+<span class="invis-code">    </span>}<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Much like with <code>if</code>-statements we have a keyword,
+                    followed by something in parentheses and then a code block.
+                    This time around, the stuff in parentheses is actually three
+                    things:
+                </p>
+
+                <ul style="list-style: none;">
+                    <li>
+                        <code>int i = 5</code><br><p>
+                            Every loop can run based on loop-specific variables.
+                            In this case we make a variable <code>i</code> with
+                            the value at which we start our countdown. In case
+                            you do not need any loop-specific variables, you can
+                            choose not to write anything here. The semicolon
+                            after this part is still necessary though.
+                        </p>
+                    </li>
+                    <br>
+                    <li>
+                        <code>i > 0</code><br><p>
+                            Loops should end. And this second term in
+                            parentheses makes sure they do. This second part is
+                            a condition that is checked every time before the
+                            loop's code block is executed. This condition can
+                            contain the loop's specific variable and outside
+                            variables. This field can also be left empty. Doing
+                            so substitutes 1 as condition, which is always true.
+                            The semicolon after this part is necessary.
+                        </p>
+                    </li>
+                    <br>
+                    <li>
+                        <code>i--</code><br><p>
+                            This update is run every time the loop's code block
+                            has been fully executed. This can be useful to
+                            update (loop-specific) variables and eventually end
+                            the loop. In this specific case, <code>i</code> is
+                            decremented by 1 after running through the loop
+                            once. This updates loop-specific variable
+                            <code>i</code> to count down until its value is low
+                            enough to no longer meet the condition of the loop.
+                            In case this part is left empty, nothing will happen
+                            after the loop's code block is done executing.
+                        </p>
+                    </li>
+                </ul>
+
+                <br>
+
+                <p>
+                    Although this type of loop is common, you can substitute any
+                    kind of variable definition, loop condition and update in a
+                    for loop. You may, for example, write a program to flex on
+                    you by printing half the alphabet backwards even though you
+                    can't:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>for (char letter = 'z'; letter != 'm'; letter--) {
+<span class="invis-code">    </span>    printf("%c", letter);
+<span class="invis-code">    </span>}
+<span class="invis-code">    </span>
+<span class="invis-code">    </span>printf("\n");<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Here, you may think that the loop would print the alphabet
+                    backwards and skip the <code>'m'</code>. However, the loop
+                    stops its execution entirely whenever its condition is
+                    violated.
+                    <br>
+                    Crazier loops are imaginable and definitely possible!
+                    However, they all follow this general shape.
+                </p>
+            </section>
+            
+            <br>
+
+            <section id="while-loops">
+                <a href="#while-loops" class="section-link">
+                    <h2>Just a dumber <code>for</code>-loop: the <code>while</code>-loop</h2>
+                </a>
+
+                <p>
+                    With a detailed understanding of <code>for</code>-loops in
+                    place, <code>while</code>-loops (and
+                    <code>do/while</code>-loops much the same) are incredibly
+                    simple. These loops are just <code>for</code>-loops for
+                    which you only specify a condition and no variables or
+                    updates.
+                    <br>
+                    You can also think of it as an <code>if</code>-statement
+                    that loops back to itself when its done executing its code.
+                    In writing, these two are much alike as well: a keyword,
+                    a condition in parentheses and a code block after those
+                    parentheses:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>int init;
+<span class="invis-code">    </span>printf("At what value should the countdown begin? ");
+<span class="invis-code">    </span>scanf(" %d", &init);
+<span class="invis-code">    </span>    
+<span class="invis-code">    </span>while (init &gt; 0) {
+<span class="invis-code">    </span>    printf("Launching in %d seconds!\n", init);
+<span class="invis-code">    </span>    init -= 1;
+<span class="invis-code">    </span>}<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    This example shows the syntax (how to write) of a
+                    <code>while</code>-loop, as well as its main strength.
+                    <code>while</code>-loops do not run for a fixed number of
+                    times like <code>for</code>-loops do. This gives flexibility
+                    that a <code>for</code>-loop cannot. In this example, we can
+                    take any initial countdown value as input and have a working
+                    countdown. This makes a far more tolerant and adaptive
+                    program than the one before.
+                </p><br><p>
+                    The last important thing about regular
+                    <code>while</code>-loops is that they check their
+                    condition <i>before</i> running the code block.
+                    <br>
+                    There exists a cousin, the <code>do/while</code>-loop that
+                    instead checks the condition <i>after</i> executing the code
+                    block. This means that the code in this loop's code block is
+                    executed at least once as no condition is checked before the
+                    first iteration of the loop. Its syntax is as follows:
+                </p>
+
+                <br>
+    
+                <div class="codecell" oncontextmenu="copyCode(this); return false;">
+                    <h3>Copied!</h3>
+    
+                    <pre class="cellContents"><span class="invis-code">#include &lt;stdio.h&gt;
+
+int main() {
+    </span>int init;
+<span class="invis-code">    </span>
+<span class="invis-code">    </span>do {
+<span class="invis-code">    </span>    printf("At what value should the countdown begin? ");
+<span class="invis-code">    </span>    scanf(" %d", &init);
+<span class="invis-code">    </span>} while (init &lt; 1);<span class="invis-code">
+
+    while (init &gt; 0) {
+        printf("Launching in %d seconds!\n", init);
+        init -= 1;
+    }<span class="invis-code">
+}</span></pre>
+                </div>
+
+                <br>
+
+                <p>
+                    Pay attention to what keywords are in use where and the fact
+                    that there is a semicolon after the loop's condition.
+                </p>
+            </section>
+
+            <section id="break-continue">
+                <a href="#break-continue" class="section-link">
+                    <h2>Manipulating loop behavior with <code>continue</code> and <code>break</code></h2>
+                </a>
+
+                <p>
+                    One final point about loops is that you can influence how
+                    they run with the <code>continue</code> and
+                    <code>break</code> keywords.
+                </p>
+
+                <ul style="list-style: none;">
+                    <li>
+                        <code>continue</code><br><p>
+                            Whenever this keyword is called, the current
+                            execution of the loop's code block is ended.
+                            Execution is moved to the very end of the code
+                            block, meaning that for <code>while</code> and
+                            <code>do/while</code>-loops the condition is
+                            immediately checked. For <code>for</code>-loops,
+                            this means the update is immediately executed and
+                            the condition is checked. If the checked condition
+                            is satisfied, the loop starts a new execution of its
+                            code block.
+                        </p>
+                    </li>
+                    <br>
+                    <li>
+                        <code>break</code><br><p>
+                            Much like <code>continue</code>, this keyword stops
+                            the execution of the loop's code block. However, in
+                            this case this also means that the loop is done
+                            looping. Regardless of whether the loop condition is
+                            still met or not, <code>break</code> ends any loop.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="outro">
+                <a href="#outro" class="section-link">
+                    <h2>Achievement get: "Must be déja vu"!</h2>
+                </a>
+
+                <p>
+                    Boom! All caught up on loops in C! Time to take a
+                    well-deserved break to let everything sink in. Any plans for
+                    what to do? I think I'll play some music. On repeat. Just to
+                    spite the loops I just learned. See you in the next lesson!
+                </p>
+            </section>
+        </main>
+
+        <footer class="fine_bar">
+            <h1>F.I.N.E.</h1>
+            
+            <ul>
+                <li>(&copy; Mathieu Asselbergs 2022)</li>
+                <li><a href="mailto:le_mattt@mtmas.nl">le_mattt@mtmas.nl</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
