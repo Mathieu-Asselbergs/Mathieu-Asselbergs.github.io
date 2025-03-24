@@ -1,0 +1,60 @@
+<html><head>
+    <title>Hi</title>
+	<link rel="stylesheet" href="./Defaults/style.css">
+	
+	<style>
+	  code {
+	    border-radius: 2px;
+		background-color: rgba(0, 0, 0, 0.2);
+		font-family: monospace;
+		padding: 0 2px;
+	  }
+	</style>
+  </head>
+  <body>
+    <header class="box" style="height: 75px; padding: 0; margin: 0;">
+      <h1 style="margin: 21.5px; flex: 1;">Hey :D</h1>
+	</header>
+	
+    <div class="box">
+	  <p style="font-family: monospace; font-size: 10em; line-height: 1em; margin: 0;">hi</p>
+	  
+	  <p style="margin: 0 2em; flex: 1;">
+		<code>hi</code> is a small program that I run every morning to get my day started.
+		It picks a random quote from a list of quotes and presents it to me to cheer me up and get me going.
+		Some quotes can appear multiple times while others destroy themselves after being presented once.
+		
+		<br><br>
+		
+		Want to greet, enlighten, annoy or perplex me?
+		New quotes are always welcome and can be added to the database of quotes through the submission box below.
+		You get to use a whole 500 characters!
+	  </p>
+	</div>
+	
+	<div class="box">
+      <form id="quoteform" action="submit.php" method="post" style="flex: 1;" autocomplete="off">
+	    <label for="author">Who is submitting? (max. 25 characters)</label><br>
+		<input id="author" type="text" name="author" maxlength="25" value="Anonymous" style="border-radius: 2px; border-width: 0; padding: 8px;">
+		
+		<p>Who should be able to view this message?</p>
+		<input id="VisPriv" type="radio" name="visibility" value="0" checked="checked">
+		<label for="VisPriv">Only Mathieu</label><br>
+		<input id="VisPub" type="radio" name="visibility" value="1">
+		<label for="VisPub">Everybody!!</label><br><br>
+		
+		<p>How often should your quote be visible?</p>
+		<input type="radio" id="ttl1" name="ttl" value="0" checked="checked">
+		<label for="ttl1">Once</label><br>
+		<input type="radio" id="ttlinf" name="ttl" value="1">
+		<label for="ttlinf">Endlessly</label><br><br>
+		
+		<br><input type="submit" value="Submit quote!">
+	  </form>
+	  
+      <div>
+		<h1 style="line-height: 1em; margin: 0 0 7px 0;">Your masterpiece</h1>
+		<textarea name="quote" rows="25" cols="120" required style="padding: 8px; border-radius: 2px; border-width: 0; resize: none;" placeholder="Your quote here (max 500 characters)" form="quoteform"></textarea>
+      </div>
+	</div>
+</body></html>

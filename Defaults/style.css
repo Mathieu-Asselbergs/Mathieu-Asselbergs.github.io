@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+	color: cornsilk;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: large;
+	line-height: 1.5em;
+}
+
+a {
+	color: cornsilk;
+}
+
+h2 {
+	margin: 0;
+}
+
+.box {
+	background-color: mediumpurple;
+	margin: 20px 0;
+	display: flex;
+	padding: 7% 10%;
+	flex-wrap: wrap;
+}
+
+.box > div, .box > img {
+	margin: 0 2em;
+}
+
+.box:nth-child(odd) {
+	background-color: sandybrown;
+}
