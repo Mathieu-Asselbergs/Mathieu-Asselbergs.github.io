@@ -9,8 +9,18 @@
     </head>
 
     <body>
-        <md-block src="/Memento Mori.md">
-            `Memento Mori.md` was *not* found
-        </md-block>
+        <script>
+            var params = new URL(window.location.href).searchParams;
+            var page_url = params.get('p');
+
+            if (!page_url.endsWith('.md')) {
+                page_url = page_url + '.md';
+            }
+
+            var md_block = document.createElement('md-block');
+            md_block.src = '/md/' + page_url;
+            md_block.innerHTML = '`' + page_url + '` was *not* found';
+            document.body.appendChild(md_block);
+        </script>
     </body>
 </html>
