@@ -1,7 +1,3 @@
----
-tags:
-  - Research_Thought
----
 Following the notion captured in the work on [[Minimal Valuable Units]], this work considers implementations of MVU processing code in the Rust programming language, possibly as a zero-cost abstraction.
 
 ### The concept of a minimally progressing iterator (MPI)
