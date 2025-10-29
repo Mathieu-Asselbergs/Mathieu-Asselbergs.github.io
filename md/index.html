@@ -25,7 +25,7 @@
                 md_block.src = '/md/' + page_url;
                 md_block.innerHTML = '`' + page_url + '` was *not* found';
                 document.body.appendChild(md_block);
-                document.head.title.innerHTML = page_url.split('.md')[0];
+                document.getElementsByTagName('title')[0].innerHTML = page_url.split('.md')[0];
             }
         </script>
     </body>
