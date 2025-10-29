@@ -16,18 +16,17 @@
             if (page_url == null) {
                 document.body.append("Please add an argument `p` to your URL by writing `?p=...` after the current URL.\n");
                 document.body.append("An example would look like: `mathieu.github.io/md?p=Note`");
-                return;
+            } else {
+                if (!page_url.endsWith('.md')) {
+                    page_url = page_url + '.md';
+                }
+                
+                var md_block = document.createElement('zero-md');
+                md_block.src = '/md/' + page_url;
+                md_block.innerHTML = '`' + page_url + '` was *not* found';
+                document.body.appendChild(md_block);
+                document.head.title.innerHTML = page_url.split('.md')[0];
             }
-
-            if (!page_url.endsWith('.md')) {
-                page_url = page_url + '.md';
-            }
-            
-            var md_block = document.createElement('zero-md');
-            md_block.src = '/md/' + page_url;
-            md_block.innerHTML = '`' + page_url + '` was *not* found';
-            document.body.appendChild(md_block);
-            document.head.title.innerHTML = page_url.split('.md')[0];
         </script>
     </body>
 </html>
