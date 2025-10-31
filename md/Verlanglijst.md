@@ -3,6 +3,7 @@ Please enjoy this list of things that you can make me happy with! :)
 
 ## Overig
 Rolife - Sakura Densya (TGB01)
+<br> Laptopsticker van Jinu uit K-Pop Demon Hunters (max. grootte is half telefoonscherm)
 
 ## CDs
 Noah Kahan - Cape Elizabeth
