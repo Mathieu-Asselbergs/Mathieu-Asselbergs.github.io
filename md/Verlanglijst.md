@@ -1,46 +1,93 @@
-# Verlanglijst
-Please enjoy this list of things that you can make me happy with! :)
+# Gift wishlist Mathieu Asselbergs
+This list is an exhaustive list of things I currently would like to receive as a present.
+Items that are not featured on this list may not be appreciated; present these at your own risk.
+In case someone does not want to or cannot give any of the listed gifts, I would prefer not receiving a gift over receiving money or an unappreciated gift.
 
-## Overig
-Rolife - Sakura Densya (TGB01)
-<br> Laptopsticker van Jinu uit K-Pop Demon Hunters (max. grootte is half telefoonscherm)
 
-## CDs
-Noah Kahan - Cape Elizabeth
-<br> Noah Kahan - Stick Season
-<br> Noah Kahan - Busyhead
+## Gift preferences - These are important to me
+I have a strong preference for non-physical gifts and self-made gifts (with an expiration or use-by date unless explicitly asked for).
+A big part of this preference comes from an aversion of throwing out gifts when in need of physical space, when the gift is broken, or when the gift is no longer of interest.
+An exception is made for self-made physical gifts with a personal nature and a compact form factor (i.e. a letter, card, puzzle, CD, DVD, (collection of) computer file(s), etc.)
 
-Hozier - Hozier
-<br> Hozier - Wasteland, Baby
+Further, I do not much appreciate gifts that require me to spend time doing an activity individually.
+I have a hard enough time trying to balance a student life in Eindhoven and a social life in Eindhoven't.
+However nice your thought is, there is a good chance I would prefer to spend your gift's required time with you.
 
-Racoon - Spijt Is Iets Voor Later
-<br> Racoon - Another Day
-<br> Racoon - It Is What It Is
+For all of these gifts, it holds that I also appreciate receiving it partially.
+I consider as a partial gift:
+ - a single component of a gift that is on the list,
+ - money, if and only if it is clearly attributed to a specific gift on the list, or
+ - a letter, voice memo, webpage, picture, or other form of communication that promises the later gifting of something on the list or the partial version of something on the list.
+Among these, I prefer receiving a promise of money in a nice(ly written) card/letter over receiving money directly.
+Examples of partial gifts would be the promise of a movie ticket for when something fun hits the cinema, a promise of a financial contribution for a gift on the list (such as a concert ticket), money that you mention is clearly reserved for a specific activity/item, a promise of a nice snacc/drincc for something like a movie night later on, etc..
 
-Imagine Dragons - Night Visions
-<br> Imagine Dragons - Origins
-<br> Imagine Dragons - Evolve
-<br> Imagine Dragons - Loom
-<br> Imagine Dragons - Smoke And Mirrors
-<br> Imagine Dragons - Imagine Dragons EP ("Uptight", "Curse", etc.)
+Once again, if my wishlist and what you want to give me don't align, I would rather receive nothing than something I don't like.
+I appreciate your presence more than I could appreciate any one gift, and you listening to and understanding my wishes is a big gift to give me, too!
 
-Mother Mother - Grief Chapter
+Thank you for taking the time to understand my gift preferences.
+I appreciate it :)
 
-Sam Nelson Harris - Why Does Everything Make Me Cry?
 
-X Ambassadors - Townies
-<br> X Ambassadors - VHS
-<br> X Ambassadors - VHS (Rerecorded)
-<br> X Ambassadors - The Beautiful Liar
-<br> X Ambassadors - Belong EP
-<br> X Ambassadors - Orion
+## Wishlist
+### Non-physicals
+- The Legend of Zelda: Breath of the Wild - Extension Pass
+- Movie ticket for a movie **you** would like to see (with someone else, of course. Anything goes, I'm looking for what **you** would like here.)
+- Movie ticket for a movie **I** would like to see (please verify your choice or leave the choice open; you're always welcome to join!)
+- Concert ticket for a concert **I** would like to go to (please verify your choice or leave the choice open; you're always welcome to join!)
+- Breakfast, lunch, dinner, a drink (or a combination of these options).
+- Entry ticket for something you would like to do with me sometime.
 
-Linkin Park - From Zero
+### Self-made
+- Puzzles relating to you, our friendship, your experience with friendship or your experience with me.
+- Printed versions of pictures featuring you, me, or something we worked on or experienced together.
 
-Polyphia - Remember That You Will Die
+### Purchaseables (perishable)
+- Components for a collaborative activity such as baking, cooking, cocktail/mocktail making, etc. (preference for components of non-physical or use-by gifts)
 
-La La Land soundtrack
-<br> Steven Universe soundtrack
-<br> Arcane soundtrack (Season 1)
-<br> Arcane soundtrack (Season 2)
-<br> Dear Evan Hansen soundtrack
+### Purchaseables (non-perishable)
+- Guitar strap (to hang a guitar around your neck)
+<br> - Rolife - Sakura Densya (TGB01)
+<br> - Laptop sticker of Jinu from _K-Pop Demon Hunters_ (Not too big, please!)
+
+#### CDs
+- Noah Kahan - Cape Elizabeth
+<br> - Noah Kahan - Stick Season
+<br> - Noah Kahan - Busyhead
+
+- Hozier - Hozier
+<br> - Hozier - Wasteland, Baby
+
+- Racoon - Spijt Is Iets Voor Later
+<br> - Racoon - Another Day
+<br> - Racoon - It Is What It Is
+
+- Imagine Dragons - Night Visions
+<br> - Imagine Dragons - Origins
+<br> - Imagine Dragons - Evolve
+<br> - Imagine Dragons - Loom
+<br> - Imagine Dragons - Smoke And Mirrors
+<br> - Imagine Dragons - Imagine Dragons EP ("Uptight", "Curse", etc.)
+
+- Mother Mother - Grief Chapter
+
+- Sam Nelson Harris - Why Does Everything Make Me Cry?
+
+- X Ambassadors - Townies
+<br> - X Ambassadors - VHS
+<br> - X Ambassadors - VHS (Rerecorded)
+<br> - X Ambassadors - The Beautiful Liar
+<br> - X Ambassadors - Belong EP
+<br> - X Ambassadors - Orion
+
+- Linkin Park - From Zero
+
+- Polyphia - Remember That You Will Die
+
+- La La Land soundtrack
+<br> - Steven Universe soundtrack
+<br> - Arcane soundtrack (Season 1)
+<br> - Arcane soundtrack (Season 2)
+<br> - Dear Evan Hansen soundtrack
+
+#### DVDs
+None yet...
