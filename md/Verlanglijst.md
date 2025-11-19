@@ -48,6 +48,7 @@ I appreciate it :)
 - Guitar strap (to hang a guitar around your neck)
 - Rolife - Sakura Densya (TGB01)
 - Laptop sticker of Jinu from _K-Pop Demon Hunters_ (Not too big, please!)
+- Bolsius reusable (that is, refillable) scented candle holder
 
 #### CDs
 - Noah Kahan - Cape Elizabeth
@@ -78,6 +79,9 @@ I appreciate it :)
 - X Ambassadors - The Beautiful Liar
 - X Ambassadors - Belong EP
 - X Ambassadors - Orion
+
+- Benson Boone - Walk Me Home
+- Benson Boone - American Heart
 
 - Linkin Park - From Zero
 
