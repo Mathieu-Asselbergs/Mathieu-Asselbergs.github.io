@@ -1,4 +1,4 @@
-# Gift wishlist Mathieu Asselbergs
+# Gift wishlist
 This list is an exhaustive list of things I currently would like to receive as a present.
 Items that are not featured on this list may not be appreciated; present these at your own risk.
 In case someone does not want to or cannot give any of the listed gifts, I would prefer not receiving a gift over receiving money or an unappreciated gift.
