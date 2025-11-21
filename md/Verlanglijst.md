@@ -45,6 +45,7 @@ I appreciate it :)
 - Components for a collaborative activity such as baking, cooking, cocktail/mocktail making, etc. (preference for components of non-physical or use-by gifts)
 
 ### Purchaseables (non-perishable)
+- Textbook and/or exercise book for learning Japanese
 - Guitar strap (to hang a guitar around your neck)
 - Rolife - Sakura Densya (TGB01)
 - Laptop sticker of Jinu from _K-Pop Demon Hunters_ (Not too big, please!)
