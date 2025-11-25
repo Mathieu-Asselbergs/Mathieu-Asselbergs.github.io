@@ -95,4 +95,4 @@ I appreciate it :)
 - Dear Evan Hansen soundtrack
 
 #### DVDs
-None yet...
+- K-Pop Demon Hunters
