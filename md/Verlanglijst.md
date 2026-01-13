@@ -53,14 +53,12 @@ I appreciate it :)
 
 #### CDs
 - Noah Kahan - Cape Elizabeth
-- Noah Kahan - Stick Season
 - Noah Kahan - Busyhead
 
 - Hozier - Hozier
 - Hozier - Wasteland, Baby
 
 - Racoon - Spijt Is Iets Voor Later
-- Racoon - Another Day
 - Racoon - It Is What It Is
 
 - Imagine Dragons - Night Visions
