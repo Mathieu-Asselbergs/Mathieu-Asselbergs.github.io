@@ -47,7 +47,6 @@ I appreciate it :)
 ### Purchaseables (non-perishable)
 - Textbook and/or exercise book for learning Japanese
 - Guitar strap (to hang a guitar around your neck)
-- Rolife - Sakura Densya (TGB01)
 - Laptop sticker of Jinu from _K-Pop Demon Hunters_ (Not too big, please!)
 - Bolsius reusable (that is, refillable) scented candle holder
 
