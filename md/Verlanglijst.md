@@ -30,7 +30,7 @@ I appreciate it :)
 
 ## Wishlist
 ### Non-physicals
-- The Legend of Zelda: Breath of the Wild - Extension Pass
+- [x] The Legend of Zelda: Breath of the Wild - Extension Pass
 - Movie ticket for a movie **you** would like to see (with someone else, of course. Anything goes, I'm looking for what **you** would like here.)
 - Movie ticket for a movie **I** would like to see (please verify your choice or leave the choice open; you're always welcome to join!)
 - Concert ticket for a concert **I** would like to go to (please verify your choice or leave the choice open; you're always welcome to join!)
@@ -54,15 +54,15 @@ I appreciate it :)
 - Noah Kahan - Cape Elizabeth
 - Noah Kahan - Busyhead
 
-- Hozier - Hozier
+- [x] Hozier - Hozier
 - Hozier - Wasteland, Baby
 
 - Racoon - Spijt Is Iets Voor Later
 - Racoon - It Is What It Is
 
-- Imagine Dragons - Night Visions
+- [x] Imagine Dragons - Night Visions
 - Imagine Dragons - Origins
-- Imagine Dragons - Evolve
+- [x] Imagine Dragons - Evolve
 - Imagine Dragons - Loom
 - Imagine Dragons - Smoke And Mirrors
 - Imagine Dragons - Imagine Dragons EP ("Uptight", "Curse", etc.)
@@ -79,7 +79,7 @@ I appreciate it :)
 - X Ambassadors - Orion
 
 - Benson Boone - Walk Me Home
-- Benson Boone - American Heart
+- [x] Benson Boone - American Heart
 
 - Linkin Park - From Zero
 
