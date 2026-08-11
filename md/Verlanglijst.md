@@ -31,65 +31,65 @@ I appreciate it :)
 ## Wishlist
 ### Non-physicals
 - [x] The Legend of Zelda: Breath of the Wild - Extension Pass
-- Movie ticket for a movie **you** would like to see (with someone else, of course. Anything goes, I'm looking for what **you** would like here.)
-- Movie ticket for a movie **I** would like to see (please verify your choice or leave the choice open; you're always welcome to join!)
-- Concert ticket for a concert **I** would like to go to (please verify your choice or leave the choice open; you're always welcome to join!)
-- Breakfast, lunch, dinner, a drink (or a combination of these options).
-- Entry ticket for something you would like to do with me sometime.
+- [ ] Movie ticket for a movie **you** would like to see (with someone else, of course. Anything goes, I'm looking for what **you** would like here.)
+- [ ] Movie ticket for a movie **I** would like to see (please verify your choice or leave the choice open; you're always welcome to join!)
+- [ ] Concert ticket for a concert **I** would like to go to (please verify your choice or leave the choice open; you're always welcome to join!)
+- [ ] Breakfast, lunch, dinner, a drink (or a combination of these options).
+- [ ] Entry ticket for something you would like to do with me sometime.
 
 ### Self-made
-- Puzzles relating to you, our friendship, your experience with friendship or your experience with me.
-- Printed versions of pictures featuring you, me, or something we worked on or experienced together.
+- [ ] Puzzles relating to you, our friendship, your experience with friendship or your experience with me.
+- [ ] Printed versions of pictures featuring you, me, or something we worked on or experienced together.
 
 ### Purchaseables (perishable)
-- Components for a collaborative activity such as baking, cooking, cocktail/mocktail making, etc. (preference for components of non-physical or use-by gifts)
+- [ ] Components for a collaborative activity such as baking, cooking, cocktail/mocktail making, etc. (preference for components of non-physical or use-by gifts)
 
 ### Purchaseables (non-perishable)
-- Textbook and/or exercise book for learning Japanese
-- Guitar strap (to hang a guitar around your neck)
-- Laptop sticker of Jinu from _K-Pop Demon Hunters_ (Not too big, please!)
-- Bolsius reusable (that is, refillable) scented candle holder
+- [ ] Textbook and/or exercise book for learning Japanese
+- [ ] Guitar strap (to hang a guitar around your neck)
+- [ ] Laptop sticker of Jinu from _K-Pop Demon Hunters_ (Not too big, please!)
+- [ ] Bolsius reusable (that is, refillable) scented candle holder
 
 #### CDs
-- Noah Kahan - Cape Elizabeth
-- Noah Kahan - Busyhead
+- [ ] Noah Kahan - Cape Elizabeth
+- [ ] Noah Kahan - Busyhead
 
 - [x] Hozier - Hozier
-- Hozier - Wasteland, Baby
+- [ ] Hozier - Wasteland, Baby
 
-- Racoon - Spijt Is Iets Voor Later
-- Racoon - It Is What It Is
+- [ ] Racoon - Spijt Is Iets Voor Later
+- [ ] Racoon - It Is What It Is
 
 - [x] Imagine Dragons - Night Visions
-- Imagine Dragons - Origins
+- [ ] Imagine Dragons - Origins
 - [x] Imagine Dragons - Evolve
-- Imagine Dragons - Loom
-- Imagine Dragons - Smoke And Mirrors
-- Imagine Dragons - Imagine Dragons EP ("Uptight", "Curse", etc.)
+- [ ] Imagine Dragons - Loom
+- [ ] Imagine Dragons - Smoke And Mirrors
+- [ ] Imagine Dragons - Imagine Dragons EP ("Uptight", "Curse", etc.)
 
-- Mother Mother - Grief Chapter
+- [ ] Mother Mother - Grief Chapter
 
-- Sam Nelson Harris - Why Does Everything Make Me Cry?
+- [ ] Sam Nelson Harris - Why Does Everything Make Me Cry?
 
-- X Ambassadors - Townies
-- X Ambassadors - VHS
-- X Ambassadors - VHS (Rerecorded)
-- X Ambassadors - The Beautiful Liar
-- X Ambassadors - Belong EP
-- X Ambassadors - Orion
+- [ ] X Ambassadors - Townies
+- [ ] X Ambassadors - VHS
+- [ ] X Ambassadors - VHS (Rerecorded)
+- [ ] X Ambassadors - The Beautiful Liar
+- [ ] X Ambassadors - Belong EP
+- [ ] X Ambassadors - Orion
 
-- Benson Boone - Walk Me Home
+- [ ] Benson Boone - Walk Me Home
 - [x] Benson Boone - American Heart
 
-- Linkin Park - From Zero
+- [ ] Linkin Park - From Zero
 
-- Polyphia - Remember That You Will Die
+- [ ] Polyphia - Remember That You Will Die
 
-- La La Land soundtrack
-- Steven Universe soundtrack
-- Arcane soundtrack (Season 1)
-- Arcane soundtrack (Season 2)
-- Dear Evan Hansen soundtrack
+- [ ] La La Land soundtrack
+- [ ] Steven Universe soundtrack
+- [ ] Arcane soundtrack (Season 1)
+- [ ] Arcane soundtrack (Season 2)
+- [ ] Dear Evan Hansen soundtrack
 
 #### DVDs
-- K-Pop Demon Hunters
+- [ ] K-Pop Demon Hunters
