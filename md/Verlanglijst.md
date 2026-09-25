@@ -58,10 +58,10 @@ I appreciate it :)
 - [ ] Hozier - Wasteland, Baby
 
 - [ ] Racoon - Spijt Is Iets Voor Later
-- [ ] Racoon - It Is What It Is
+- [x] Racoon - It Is What It Is
 
 - [x] Imagine Dragons - Night Visions
-- [ ] Imagine Dragons - Origins
+- [x] Imagine Dragons - Origins
 - [x] Imagine Dragons - Evolve
 - [ ] Imagine Dragons - Loom
 - [ ] Imagine Dragons - Smoke And Mirrors
@@ -81,7 +81,7 @@ I appreciate it :)
 - [ ] Benson Boone - Walk Me Home
 - [x] Benson Boone - American Heart
 
-- [ ] Linkin Park - From Zero
+- [x] Linkin Park - From Zero
 
 - [ ] Polyphia - Remember That You Will Die
 
