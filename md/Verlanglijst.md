@@ -64,14 +64,14 @@ I appreciate it :)
 - [x] Imagine Dragons - Origins
 - [x] Imagine Dragons - Evolve
 - [ ] Imagine Dragons - Loom
-- [ ] Imagine Dragons - Smoke And Mirrors
+- [x] Imagine Dragons - Smoke And Mirrors
 - [ ] Imagine Dragons - Imagine Dragons EP ("Uptight", "Curse", etc.)
 
 - [ ] Mother Mother - Grief Chapter
 
 - [ ] Sam Nelson Harris - Why Does Everything Make Me Cry?
 
-- [ ] X Ambassadors - Townies
+- [x] X Ambassadors - Townie
 - [ ] X Ambassadors - VHS
 - [ ] X Ambassadors - VHS (Rerecorded)
 - [ ] X Ambassadors - The Beautiful Liar
@@ -85,7 +85,7 @@ I appreciate it :)
 
 - [ ] Polyphia - Remember That You Will Die
 
-- [ ] La La Land soundtrack
+- [x] La La Land soundtrack
 - [ ] Steven Universe soundtrack
 - [ ] Arcane soundtrack (Season 1)
 - [ ] Arcane soundtrack (Season 2)
