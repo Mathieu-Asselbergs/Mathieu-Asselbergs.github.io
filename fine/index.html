@@ -16,12 +16,23 @@
     </head>
 
     <body>
-        <header class="fine_bar"><a href="">F.I.N.E.</a></header>
+    <nav>
+        <p>
+            MTMAs
+        </p>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="selected"><a href="/fine">FINE</a></li>
+            <li><a href="/wishlist.html">Wishlist</a></li>
+        </ul>
+    </nav>
 
         <main>
-            <h1>Welcome to my F.I.N.E. project!</h1>
-
             <section id="intro">
+                <a href="#intro" class="section-link">
+                    <h1>Welcome to my F.I.N.E. project!</h1>
+                </a>
+
                 <p>
                     How nice of you to join me here! I've currently only
                     prepared material on programming in C. I hope it can help
@@ -48,7 +59,9 @@
                     page, but possibly useful when you want to share a specific
                     paragraph with someone. Just right-click the header and copy
                     its link.
-                </p><br><p>
+                    
+                    <br>
+
                     The second (and by far the coolest!) thing to know is how to
                     use the code cells on the instruction pages. Every page
                     about C will have at least one code cell like this one:
@@ -78,7 +91,7 @@
                     parts in the cells are usually <i>not</i> full programs.
                     <br>
                     I personally really enjoy how easy these cells are to work
-                    with. If you keep an <a style="color: lightgoldenrodyellow" href="https://www.onlinegdb.com/" target="_blank">online C editor</a>
+                    with. If you keep an <a href="https://www.onlinegdb.com/" target="_blank">online C editor</a>
                     on hand, you can go from reading to experimenting in no time
                     flat. Give it a shot!
                     <br><br>
@@ -102,18 +115,18 @@
                 </p>
 
                 <ul>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/main.html">The <code>main</code> function</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/printf.html">The <code>printf</code> function</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/scanf.html">The <code>scanf</code> function</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/if.html"><code>if</code>-statements and conditions</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/loops.html"><code>for</code>, <code>while</code> and <code>do/while</code>-loops</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/arrays.html">Arrays, <code>typedef</code> and an introduction to pointers</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/functions.html">Functions and recursion</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="basics/structs.html"><code>struct</code>s</a></li>
+                    <li><a href="basics/main.html">The <code>main</code> function</a></li>
+                    <li><a href="basics/printf.html">The <code>printf</code> function</a></li>
+                    <li><a href="basics/scanf.html">The <code>scanf</code> function</a></li>
+                    <li><a href="basics/if.html"><code>if</code>-statements and conditions</a></li>
+                    <li><a href="basics/loops.html"><code>for</code>, <code>while</code> and <code>do/while</code>-loops</a></li>
+                    <li><a href="basics/arrays.html">Arrays, <code>typedef</code> and an introduction to pointers</a></li>
+                    <li><a href="basics/functions.html">Functions and recursion</a></li>
+                    <li><a href="basics/structs.html"><code>struct</code>s</a></li>
                 </ul>
             </section>
 
-            <!-- <section id="chapters">
+            <section id="chapters">
                 <a href="#chapters" class="section-link">
                     <h2>Chapters: covering multiple concepts in context [WORK IN PROGRESS]</h2>
                 </a>
@@ -125,19 +138,12 @@
                 </p>
 
                 <ul>
-                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/ch01-introduction"><code>CH 01:</code> Introduction to C</a></li>
-                    <li><a style="color: lightgoldenrodyellow;" href="https://fine.mtmas.nl/C_Programming/ch02-control_flow"><code>CH 02:</code> Control flow</a></li>
+                    <li><a href="ch01-introduction.html"><code>CH 01:</code> Introduction to C</a></li>
+                    <li><a href="ch02-control_flow.html"><code>CH 02:</code> Control flow</a></li>
                 </ul>
-            </section> -->
+            </section>
         </main>
 
-        <footer class="fine_bar">
-            <h1>F.I.N.E.</h1>
-            
-            <ul>
-                <li>(&copy; Mathieu Asselbergs 2022)</li>
-                <li>le_mattt@mtmas.nl</li>
-            </ul>
-        </footer>
+        <footer>© Mathieu Asselbergs</footer>
     </body>
 </html>
