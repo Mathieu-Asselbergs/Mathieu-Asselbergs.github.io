@@ -1,19 +1,105 @@
 /* Variables */
 :root {
-    --text-color: white;
+    --end-bar-color: #220000;
+    --end-bar-height: 40px;
+    --nav-item-text-size: 20px;
     --page-color: #380000;
-    --finebar-color: #220000;
     --smol-code-color: rgba(50, 50, 50, 0.7);
+    --text-color: white;
 }
 
 
 /* Standard tags */
 body {
+    line-height: 1.5;
     background-color: var(--page-color);
     color: var(--text-color);
     font-family: Alata;
     margin: 0;
 }
+
+nav {
+    background-color: var(--end-bar-color);
+    font-size: var(--end-bar-height);
+    text-align: center;
+    height: var(--end-bar-height);
+    line-height: var(--end-bar-height);
+    display: flex;
+    padding: 7px;
+
+    p {
+        font-size: var(--end-bar-height);
+        line-height: var(--end-bar-height);
+        margin-right: 20px;
+    }
+
+    ul {
+        font-size: var(--nav-item-text-size);
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+    
+        .selected {
+            border-bottom: 2px var(--text-color) solid;
+        }
+    
+        li {
+            margin-left: 10px;
+            padding: 0 5px;
+        }
+    
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+    }
+}
+
+footer {
+    background-color: var(--end-bar-color);
+    padding: 7px;
+}
+
+main {
+    width: 80%;
+    margin: 50px auto;
+}
+
+details > div {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border-left: 5px rgba(0, 0, 0, 0.3) solid;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+aside {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border-left: 5px rgba(0, 0, 0, 0.3) solid;
+    padding: 10px;
+}
+
+ul {
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+a {
+    color: sandybrown;
+}
+
+
+
+
+
+
+
 
 code {
     border-radius: 5px;
@@ -22,18 +108,8 @@ code {
 	white-space: nowrap;
 }
 
-h2 {
-    margin: 0;
-}
-
-main {
-    width: 75%;
-    margin: auto;
-}
-
 p {
     margin: 0;
-    font-size: 16px;
 }
 
 @media only screen and (min-width: 1080px) {
@@ -46,7 +122,7 @@ p {
 /* Classes */
 .fine_bar {
     width: 100%;
-    background-color: var(--finebar-color);
+    background-color: var(--end-bar-color);
     font-size: 30px;
     text-align: center;
 }
